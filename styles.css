@@ -1,68 +1,102 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+    background-color: #FBDEDE;
+    font-family: Arial, sans-serif;
+    color: #000000;
 }
 
-header {
-  background-color: #463e8e;
-  padding: 1rem;
+.container {
+    display: flex;
 }
 
-nav {
-  display: flex;
-  justify-content: space-around;
-}
-
-nav a {
-  color: #fee3e1;
-  text-decoration: none;
-  padding: 0.5rem;
-}
-
-nav a:hover {
-  color: #fee7cd;
-}
-
-main {
-  padding: 2rem;
-}
-
-section {
-  margin-bottom: 2rem
-}
-
-h1 {
-  color: #5b3372;
-  margin-bottom: 1rem;
-}
-
-p {
-  color: #5b3372;
-  margin-bottom: 1rem;
-}
-
-a {
-  color: #463e8e;
-}
-
-a:hover {
-  color: #aedae2;
-}
-
-footer {
-  background-color: #fee3e1;
-  padding: 1rem;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  nav {
+.left-half {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-  }
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.intro-text h1 {
+    font-size: 2em;
+}
+
+.intro-text h2 {
+    font-size: 2.5em;
+    background-color: #EF9090;
+}
+
+.right-half {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex: 2;
+}
+
+.grid-item {
+    flex: 1 0 40%;
+    border: 2px solid #EF9090;
+    margin: 10px;
+    padding: 20px;
+    background-color: #FFC5C5;
+    position: relative;
+}
+
+.grid-item img {
+    max-width: 100%;
+}
+
+
+.content-header {
+    background-color: #EF9090;
+	padding: 10px
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in total width */
+}
+
+
+.square-background {
+    margin-top: 50px;
+}
+
+.bottom-row {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FFC5C5;
+}
+
+.footer {
+    background-color: #FFC5C5;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.review {
+  border: 1px solid #000;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.review a {
+  text-decoration: none;
+  color: #000;
+}
+
+.review .rating {
+  margin: 10px 0;
+}
+
+.review .quote {
+  font-style: italic;
 }
