@@ -3,98 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Leighcie Gregg - Product Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  .header-img {
+    background-image: url('\images\webBackground.png');
+    background-position: center;
+    background-size: cover;
+  }
+  .phone-number, .email-add {
+    display: none;
+    cursor: pointer;
+  }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <!-- Left side -->
-        <div class="left-half">
-    <div class="intro-text">
-        <h1>Hi, I'm Leighcie.</h1>
-        <div class="intro-content-header">
-            <h2>Product Professional</h2>
-        </div>
+<body class="bg-gray-100">
+<div class="container mx-auto px-4">
+  <nav class="flex justify-between items-center py-4">
+    <a href="#" class="text-3xl font-semibold text-gray-700">Leighcie Gregg, Product Professional</a>
+    <div class="hidden md:flex space-x-4">
+      <!-- Hiding Blog <a href="#" class="text-gray-600 hover:text-gray-900">Blog</a> -->
+      <a href="#workSection" class="text-gray-600 hover:text-gray-900">Work</a>
+      <a href="#aboutSection" class="text-gray-600 hover:text-gray-900">About</a>
+      <a href="#contactSection" class="text-gray-600 hover:text-gray-900">Contact</a>
     </div>
-</div>
-        <!-- Right side -->
-        <div class="right-half">
-            <!-- Grid -->
-            <div class="grid">
-                <!-- Top Left -->
-                <div class="grid-item">
-                    <img src="leighciewebsite.jpeg" alt="Leighcie">
-                </div>
-                
-                <!-- Top Right -->
-                <div class="grid-item">
-                    <div class="content-header">Who am I and how do you pronounce my name?</div>
-                    <div class="square-background">(lay-see) and with over a decade of experience in software product development, I have honed my skills in product management, data analysis, and machine learning. I am a results-oriented professional who is driven to create impactful and meaningful products that improve user experiences.</div>
-                </div>
-                
-                <!-- Bottom Left -->
-                <div class="grid-item">
-                    <div class="content-header">What have I done?</div>
-                    <!-- Replace # with the actual path to your resume -->
-                    <a href="#" download><span>Download</span></a>
-                    <div class="square-background">My resume details my extensive experience in product management, as well as my accomplishments in leading diverse teams and implementing agile methodologies. I am a Certified Scrum Product Owner and a Certified Six Sigma Black Belt, demonstrating my commitment to continuous learning and improvement.</div>
-                </div>
-                
-                <!-- Bottom Right -->
-                <div class="grid-item">
-                    <div class="content-header">Glassdoor</div>
-                    <!-- Replace # with the actual link to your portfolio -->
-                    <div class="square-background"><div class="review">
-  <a href="a url goes here" target="_blank" rel="noopener noreferrer">
-    <h2>Connect for Health Colorado</h2>
-  </a>
-  <div class="rating">
-    <p>Recommend?: <span class="thumb neutral">✋</span></p>
-    <p>CEO Approval?: <span class="thumb neutral">✋</span></p>
-    <p>Business Outlook: <span class="thumb neutral">✋</span></p>
-  </div>
-  <p class="quote">"OMG NO"</p>
-  </div>
-  <div class="square-background"><div class="review">
-<a href="https://www.glassdoor.com/Reviews/Employee-Review-MetaSource-RVW17324510.htm" target="_blank" rel="noopener noreferrer">
-    <h2>MetaSource</h2>
-  </a>
-  <div class="rating">
-    <p>Recommend?: <span class="thumb up">👍</span></p>
-    <p>CEO Approval?: <span class="thumb neutral">✋</span></p>
-    <p>Business Outlook: <span class="thumb neutral">✋</span></p>
-  </div>
-  <p class="quote">"Great place to find out what you want"</p>
-</div>
-<div class="square-background"><div class="review">
-<a href="https://www.glassdoor.com/Reviews/Employee-Review-Blockbuster-RVW43867813.htm" target="_blank" rel="noopener noreferrer">
-    <h2>Blockbuster Video</h2>
-  </a>
-  <div class="rating">
-    <p>Recommend?: <span class="thumb neutral">✋</span></p>
-    <p>CEO Approval?: <span class="thumb neutral">✋</span></p>
-    <p>Business Outlook: <span class="thumb neutral">✋</span></p>
-  </div>
-  <p class="quote">"Great college job"</p>
-</div>
-</div>
-</div>
-                </div>
-            </div>
+    <div class="md:hidden">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
 
-            <!-- Bottom Row -->
-            <div class="bottom-row">
-                <span>Phone Icon</span>
-                <span>Email Icon</span>
-                <span>LinkedIn Icon</span>
-                <span>Github Icon</span>
-            </div>
-        </div>
+  
+  <div class="header-img h-64 w-full rounded shadow-md"></div>
+  
+  <div class="flex flex-wrap justify-center -mx-2 mt-6">
+    <div class="w-full md:w-1/3 px-2 mb-4">
+      <h2 class="text-xl font-bold mb-2 text-center">What I do</h2>
+      <p class="text-gray-700 text-center">Building products users love is my top priority, but I do these as well.</p>
+      <ul class="list-disc pl-5 mt-4">
+        <li>Scale Products</li>
+        <li>Web App Development</li>
+        <li>Build Amazing Teams</li>
+      </ul>
     </div>
+    <div class="w-full md:w-1/3 px-2 mb-4">
+      <h2 class="text-xl font-bold mb-2 text-center">What I use</h2>
+      <ul class="list-disc pl-5 mt-4">
+        <li>JIRA</li>
+        <li>Figma</li>
+        <li>Miro</li>
+      </ul>
+    </div>
+    <div class="w-full md:w-1/3 px-2 mb-4">
+      <h2 class="text-xl font-bold mb-2 text-center">What you can expect</h2>
+      <ul class="list-disc pl-5 mt-4">
+        <li>Data-Driven</li>
+        <li>Customer Centric</li>
+        <li>Creative</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Work Section -->
+  <div id="workSection" class="text-center py-8">
+  <h2 class="text-2xl font-bold mb-2">Work</h2>
+  <p class="text-lg mb-4">Download my resume</p>
+  <a href="C:\Users\leigh\my-website\Resume_Leighcie_Gregg.pdf" target="_blank" class="inline-block">
+    <i class="fas fa-download fa-3x"></i>
+  </a>
+</div>
+<!-- About Section -->
+  <div id="aboutSection" class="text-center py-8">
+  <h2 class="text-2xl font-bold mb-2">About Me</h2>
+  <p class="text-lg mb-4 text-left">I bring over 10 years of experience as a software product owner in the mortgage and insurance industries, blending technical expertise with a strong user focus. 
+  My work is driven by a belief in continuous improvement, powered by data to create products that earn user acclaim. Certified in SAFe 6.0 and Advanced CSPO, I thrive on collaboration, 
+  bridging business and tech with a detail-oriented approach. Based in Colorado since 2012, I'm engaged to a brilliant software engineer, Danny. We share our home with two cats, the beautiful, dainty and sneaky Ajira and our energetic
+trouble-maker, Schema.</p>
+</div>
+<!-- Contact Section -->
+<div class="flex justify-center space-x-4 mt-4">
+  <i class="fas fa-phone-alt fa-3x cursor-pointer" onclick="togglePhoneNumber()"></i>
+  <div id="phoneNumber" class="phone-number">303.549.1293</div> <!-- Added phone number element -->
+  
+  <i class="fas fa-envelope fa-3x cursor-pointer" onclick="toggleEmailAdd()"></i>
+  <div id="emailAdd" class="email-add">leighciegregg@gmail.com</div> <!-- Added email address element -->
+  
+  <!-- Wrap the LinkedIn icon in an anchor tag and apply fa-3x -->
+  <a href="https://www.linkedin.com/in/leighcie-gregg/" target="_blank" class="cursor-pointer">
+    <i class="fab fa-linkedin-in fa-3x"></i>
+  </a>
+ <!-- Hiding GitHub icon <i class="fab fa-github fa-3x"></i> -->
+</div>
 
-    <!-- Footer -->
-    <div class="footer">
-        © 2023 Professional Product Manager. All rights reserved.
-    </div>
+  
+  <script>
+    function togglePhoneNumber() {
+      var phoneNumber = document.getElementById("phoneNumber");
+      phoneNumber.style.display = phoneNumber.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleEmailAdd() {
+      var emailAdd = document.getElementById("emailAdd");
+      emailAdd.style.display = emailAdd.style.display === "none" ? "block" : "none";
+    }
+  </script>
+
+  <!-- Footer -->
+  <div class="text-center py-4">
+    © 2023 Professional Product Manager. All rights reserved.
+  </div>
 </body>
 </html>
