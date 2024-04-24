@@ -1,3 +1,8 @@
-document.getElementById('alertButton').addEventListener('click', function () {
-    alert('Hello, this is a JavaScript alert!');
-});
+function toggleContactInfo() {
+    var info = document.getElementById("contact-info");
+    if (info.classList.contains("visible")) {
+        info.classList.remove("visible");
+    } else {
+        info.classList.add("visible");
+    }
+}

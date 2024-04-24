@@ -1,102 +1,188 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
 body {
-    background-color: #FBDEDE;
-    font-family: Arial, sans-serif;
-    color: #000000;
+    font-family: 'Josefin Sans', sans-serif
+    color: #333;
+    background: #fff;
+    line-height: 1.6;
 }
 
 .container {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+/* Header styles */
+header {
+    background: #ffffff;
+}
+
+.header-container {
     display: flex;
-}
-
-.left-half {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-}
-
-.intro-text h1 {
-    font-size: 2em;
-}
-
-.intro-text h2 {
-    font-size: 2.5em;
-    background-color: #EF9090;
-}
-
-.right-half {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.grid {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    flex: 2;
-}
-
-.grid-item {
-    flex: 1 0 40%;
-    border: 2px solid #EF9090;
-    margin: 10px;
-    padding: 20px;
-    background-color: #FFC5C5;
-    position: relative;
-}
-
-.grid-item img {
-    max-width: 100%;
-}
-
-
-.content-header {
-    background-color: #EF9090;
-	padding: 10px
-    width: 100%;
-    box-sizing: border-box; /* Include padding and border in total width */
-}
-
-
-.square-background {
-    margin-top: 50px;
-}
-
-.bottom-row {
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
     align-items: center;
-    background-color: #FFC5C5;
 }
 
-.footer {
-    background-color: #FFC5C5;
+.header-left h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.header-left .title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.header-right {
+    display: none; /* This hides the navigation links */
+}
+
+.header-right ul {
+    display: flex;
+    gap: 20px;
+}
+
+.header-right li {
+    list-style-type: none;
+}
+
+.header-right a {
+    color: #000;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.header-right a:hover, .header-right a:focus {
+    color: #555;
+}
+
+/* Intro section styles */
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.intro-text {
+    max-width: 600px;
+}
+
+.intro-text h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2.2em;
+}
+
+.intro-text .subheading {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.intro-text p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1em;
+    margin-bottom: 2em;
+}
+
+.buttons .button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s, opacity 0.2s;
+    font-size: 1em;
+}
+
+.resume-button {
+    background-color: #5c3c92; /* Purple */
+}
+
+.projects-button {
+    background-color: #077b8a; /* Teal */
+}
+
+.contact-button {
+    background-color: #d72631; /* Red */
+}
+
+#contact-info {
+    margin-top: 20px;
     text-align: center;
+    background: #f9f9f9; /* A light background to distinguish the info */
     padding: 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-.review {
-  border: 1px solid #000;
-  padding: 20px;
-  margin-bottom: 10px;
+    border-radius: 8px; /* for a slight rounded corner */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    display: none; /* Hidden by default */
 }
 
-.review a {
-  text-decoration: none;
-  color: #000;
+#contact-info.visible {
+    height: 100px; /* Set this to the height needed for your contact info */
+    padding: 20px; /* Only add padding when visible to maintain the layout */
 }
 
-.review .rating {
-  margin: 10px 0;
+#contact-info p {
+    font-size: 1em;
+    color: #333; /* Matching the color scheme */
+    margin: 10px 0; /* Space out the email and phone number */
+    line-height: 1.4;
 }
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-right ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-.review .quote {
-  font-style: italic;
+    .header-right a {
+        display: block;
+        width: 100%;
+    }
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text, .buttons .button {
+        max-width: 100%;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons .button {
+        margin-bottom: 10px; /* Stack the buttons with space between */
+        margin-right: 0;
+    }
 }
