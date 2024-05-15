@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Studies | Leighcie Gregg</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
+        <title>Case Studies | Leighcie Gregg</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
 <body>
     <header>
         <!-- Header here -->
     </header>
     <main>
-        <h1></h1>
-        <div class="case-study">
+            <h1></h1>
+            <img id="case-study-image" src="StreamliningSuccess.png" alt="Streamlining Success">
+            <div id="case-study-text" class="case-study">
             <h2>Project Case Study: Redesigning the Renewals Process for the State Insurance Marketplace</h2>
-            <h3>Title: Redesigning the Renewals Process for the State Insurance Marketplace</h3>
+            <h3><!--subheader here--></h3>
             <p>Overview: I spearheaded the overhaul of the renewals process for the state insurance marketplace to enhance efficiency and user experience.</p>
         
             <h2>Problem Statement</h2>
@@ -49,5 +51,15 @@
     <footer>
         <!-- Footer here -->
     </footer>
+    <script>
+        document.getElementById('case-study-image').addEventListener('click', function() {
+            var text = document.getElementById('case-study-text');
+            if (text.style.display === "none") {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>

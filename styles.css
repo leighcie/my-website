@@ -190,8 +190,21 @@ header {
         margin-right: 0;
     }
 }
+/* case-study styles */
+main {
+    display: flex;
+    align-items: flex-start;
+}
+
+#case-study-text {
+    margin-left: 20px;
+    display: none; /* Hide the text by default */
+}
 .case-study {
-    font-family: 'Josefin Sans', sans-serif;
+    
+    font-family: "Freeman", serif;
+    font-weight: 400;
+    font-style: normal;
     color: #333;
     line-height: 1.6;
     padding: 20px;
@@ -201,13 +214,13 @@ header {
 }
 
 .case-study h2 {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Freeman', serif;
     color: #444;
     margin-top: 20px;
 }
 
 .case-study h3 {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Freeman', serif;
     color: #666;
     margin-top: 10px;
 }
