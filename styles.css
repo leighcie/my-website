@@ -121,6 +121,10 @@ header {
     background-color: #5c3c92; /* Purple */
 }
 
+.case-studies-button {
+    background-color: #f7b801; /* Yellow */
+}
+
 .projects-button {
     background-color: #077b8a; /* Teal */
 }
@@ -185,4 +189,37 @@ header {
         margin-bottom: 10px; /* Stack the buttons with space between */
         margin-right: 0;
     }
+}
+.case-study {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.case-study h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: #444;
+    margin-top: 20px;
+}
+
+.case-study h3 {
+    font-family: 'Libre Baskerville', serif;
+    color: #666;
+    margin-top: 10px;
+}
+
+.case-study p {
+    margin: 10px 0;
+}
+
+.case-study ul {
+    padding-left: 20px;
+}
+
+.case-study ul li {
+    margin-bottom: 10px;
 }
