@@ -1,64 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
-        <title>Case Studies | Leighcie Gregg</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
+    <title>Case Studies | Leighcie Gregg</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .case-study {
+            display: none;
+        }
+    </style>
+</head>
 <body>
     <header>
-        <!-- Header here -->
+        <!-- Header content here -->
     </header>
     <main>
-            <h1></h1>
-            <img id="case-study-image" src="StreamliningSuccess.png" alt="Streamlining Success">
-            <div id="case-study-text" class="case-study">
-            <h2>Project Case Study: Redesigning the Renewals Process for the State Insurance Marketplace</h2>
-            <h3><!--subheader here--></h3>
-            <p>Overview: I spearheaded the overhaul of the renewals process for the state insurance marketplace to enhance efficiency and user experience.</p>
-        
-            <h2>Problem Statement</h2>
-            <p>Context: The renewals process required manual initiation and continuous monitoring, leading to substantial system downtimes—typically exceeding 8 calendar days.</p>
-            <p>Specific Problems: We aimed to automate and expedite the renewals process to identify eligible customers, verify their eligibility, offer automatic and option-based renewal system while minimizing downtime.</p>
-        
-            <h2>Solution</h2>
-            <p>Approach: We mapped out existing processes and pain points, then evaluated our newly designed service-oriented architecture for enhancements.</p>
-            <h3>Steps:</h3>
-            <ul>
-                <li>Conducted a detailed analysis of the manual process.</li>
-                <li>Mapped the current workflow and pinpointed inefficiencies.</li>
-                <li>Designed an automated solution leveraging our enhanced service-oriented architecture.</li>
-                <li>Collaborated with stakeholders to gather requirements and align on goals.</li>
-                <li>Developed, tested, and implemented the new process in an AWS environment.</li>
-                <li>Monitored and refined the solution post-implementation.</li>
-            </ul>
-            <p>Technologies and Tools: Agile methodologies (Scrum), service-oriented architecture, AWS, Java, Spring Boot, Jira (work management), Confluence (documentation), PowerPoint (presentations), Miro (process mapping), Slack (team collaboration).</p>
-        
-            <h2>Results</h2>
-            <p>Outcomes: The new automated process successfully processed 87% of renewals within 24 hours.</p>
-            <p>KPIs: We set a goal to process 80% of renewals within 3 days.</p>
-            <p>Impact: This significantly reduced downtime, allowing support staff and customers more time to make insurance selections. Despite concerns from a recent data migration, we surpassed our target renewal rate.</p>
-        
-            <h2>Learnings and Reflections</h2>
-            <p>Challenges Faced: The process involved multiple teams, requiring intensive collaboration under tight deadlines. We encountered gaps in requirements and data errors that needed quick resolution.</p>
-            <p>Key Learnings: Success relies on shared ownership across teams. Effective collaboration, documentation of edge cases, and streamlined error handling can set teams up for future successes.</p>
-            <p>Future Improvements: While the project was a success, future efforts could focus on optimizing eligibility determination processes for even greater efficiency.</p>
+        <!-- First case study -->
+        <div class="case-study-container">
+            <img id="case-study-image-1" src="StreamliningSuccess.png" alt="Streamlining Success">
+            <div id="case-study-text-1" class="case-study">
+                <h2>Project Case Study: Redesigning the Renewals Process for the State Insurance Marketplace</h2>
+                <p>Overview: I spearheaded the overhaul of the renewals process for the state insurance marketplace to enhance efficiency and user experience.</p>
+                <h2>Problem Statement</h2>
+                <p>Context: The renewals process required manual initiation and continuous monitoring, leading to substantial system downtimes—typically exceeding 8 calendar days.</p>
+                <p>Specific Problems: We aimed to automate and expedite the renewals process to identify eligible customers, verify their eligibility, offer automatic and option-based renewal system while minimizing downtime.</p>
+                <h2>Solution</h2>
+                <p>Approach: We mapped out existing processes and pain points, then evaluated our newly designed service-oriented architecture for enhancements.</p>
+                <h3>Steps:</h3>
+                <ul>
+                    <li>Conducted a detailed analysis of the manual process.</li>
+                    <li>Mapped the current workflow and pinpointed inefficiencies.</li>
+                    <li>Designed an automated solution leveraging our enhanced service-oriented architecture.</li>
+                    <li>Collaborated with stakeholders to gather requirements and align on goals.</li>
+                    <li>Developed, tested, and implemented the new process in an AWS environment.</li>
+                    <li>Monitored and refined the solution post-implementation.</li>
+                </ul>
+                <p>Technologies and Tools: Agile methodologies (Scrum), service-oriented architecture, AWS, Java, Spring Boot, Jira (work management), Confluence (documentation), PowerPoint (presentations), Miro (process mapping), Slack (team collaboration).</p>
+                <h2>Results</h2>
+                <p>Outcomes: The new automated process successfully processed 87% of renewals within 24 hours.</p>
+                <p>KPIs: We set a goal to process 80% of renewals within 3 days.</p>
+                <p>Impact: This significantly reduced downtime, allowing support staff and customers more time to make insurance selections. Despite concerns from a recent data migration, we surpassed our target renewal rate.</p>
+                <h2>Learnings and Reflections</h2>
+                <p>Challenges Faced: The process involved multiple teams, requiring intensive collaboration under tight deadlines. We encountered gaps in requirements and data errors that needed quick resolution.</p>
+                <p>Key Learnings: Success relies on shared ownership across teams. Effective collaboration, documentation of edge cases, and streamlined error handling can set teams up for future successes.</p>
+                <p>Future Improvements: While the project was a success, future efforts could focus on optimizing eligibility determination processes for even greater efficiency.</p>
+            </div>
+        </div>
+
+        <!-- Second case study -->
+        <div class="case-study-container">
+            <img id="case-study-image-2" src="ReconciliationRevolution.png" alt="Reconciliation Revolution">
+            <div id="case-study-text-2" class="case-study">
+                <h2>Project Case Study: Enhancing Data Reconciliation Corrections for the Mortgage Industry</h2>
+                <p>Overview: I led the enhancement of Mintrak2, a SaaS platform used by servicers and sub-servicers in the mortgage industry, to improve efficiency and user satisfaction in data reconciliation with the MERS registry.</p>
+                <h2>Problem Statement</h2>
+                <p>Context: Mintrak2 enabled customers to upload their datasets alongside the MERS dataset for comparison and discrepancy identification. However, customers frequently encountered the same discrepancies each month due to delayed system updates.</p>
+                <p>Specific Problems: We sought to streamline the reconciliation process by helping users prioritize and address discrepancies effectively and enable quicker system updates to reduce recurring issues.</p>
+                <h2>Solution</h2>
+                <p>Approach: We analyzed the existing processes and customer feedback, then identified and implemented targeted improvements to enhance the user experience.</p>
+                <h3>Steps:</h3>
+                <ul>
+                    <li>Conducted a detailed analysis of customer feedback and system usage data.</li>
+                    <li>Mapped the current workflow to identify inefficiencies and recurring pain points.</li>
+                    <li>Implemented discrepancy sorting to allow users to prioritize and address older discrepancies first.</li>
+                    <li>Developed a custom export feature enabling users to quickly generate updated datasets for their IT teams.</li>
+                    <li>Collaborated with stakeholders to gather requirements and align on goals.</li>
+                    <li>Tested and implemented the new features.</li>
+                    <li>Monitored and refined the solution post-implementation.</li>
+                </ul>
+                <p>Technologies and Tools: Agile methodologies (Scrum), Jira (work management), Microsoft Word and Adobe PDF (documentation), PowerPoint (presentations), Visio (process mapping), Microsoft Teams (team collaboration).</p>
+                <h2>Results</h2>
+                <p>Outcomes: The new features led to significantly happier clients who experienced fewer recurring discrepancies.</p>
+                <p>KPIs: Target: Reduce recurring discrepancies by 50% within 6 months. Achieved: 60% reduction in recurring discrepancies within 3 months.</p>
+                <p>Impact: The streamlined reconciliation process improved user satisfaction, with MERS recommending these features to Mintrak2 users due to noticeable improvements in data comparisons.</p>
+                <h2>Learnings and Reflections</h2>
+                <p>Challenges Faced: Integrating new features without cluttering the page and ensuring they were intuitive for users. For customers servicing loans in-house and subservicing others, we needed a way to export data by servicer. Although these data elements existed, inaccuracies in the servicer or subservicer information required us to create separate files for each party based on the customer's remediation.</p>
+                <p>Key Learnings: Detailed and iterative testing is essential, especially when dealing with custom file types. Fixing one issue often introduced new ones, highlighting the need for a robust testing plan. Effective communication and collaboration across teams ensured that everyone was aligned, and stakeholders received the correct information. Additionally, leveraging existing UI elements and keeping the design intuitive were critical for user adoption and satisfaction.</p>
+                <p>Future Improvements: A more thorough and consistent testing plan for custom file types to prevent new bugs from being introduced when fixing existing ones.</p>
+            </div>
         </div>
     </main>
     <footer>
-        <!-- Footer here -->
+        <!-- Footer content here -->
     </footer>
     <script>
-        document.getElementById('case-study-image').addEventListener('click', function() {
-            var text = document.getElementById('case-study-text');
-            if (text.style.display === "none") {
-                text.style.display = "block";
-            } else {
-                text.style.display = "none";
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('case-study-image-1').addEventListener('click', function() {
+                var text = document.getElementById('case-study-text-1');
+                // Toggle the display of the case study text
+                text.style.display = text.style.display === "none" || text.style.display === "" ? "block" : "none";
+            });
+
+            document.getElementById('case-study-image-2').addEventListener('click', function() {
+                var text = document.getElementById('case-study-text-2');
+                text.style.display = text.style.display === "none" || text.style.display === "" ? "block" : "none";
+            });
         });
     </script>
 </body>

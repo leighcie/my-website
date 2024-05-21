@@ -11,7 +11,7 @@ body, h1, h2, h3, p, ul, li, a {
 }
 
 body {
-    font-family: 'Josefin Sans', sans-serif
+    font-family: 'Josefin Sans', sans-serif;
     color: #333;
     background: #fff;
     line-height: 1.6;
@@ -154,6 +154,7 @@ header {
     margin: 10px 0; /* Space out the email and phone number */
     line-height: 1.4;
 }
+
 /* Responsive design adjustments */
 @media (max-width: 768px) {
     .header-container {
@@ -190,18 +191,26 @@ header {
         margin-right: 0;
     }
 }
+
 /* case-study styles */
 main {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    padding: 20px;
 }
 
-#case-study-text {
-    margin-left: 20px;
-    display: none; /* Hide the text by default */
+.case-study-container {
+    margin-bottom: 20px;
 }
+/* The images are clickable */
+#case-study-image-1, #case-study-image-2 {
+    cursor: pointer;
+}
+
 .case-study {
-    
+    margin-top: 20px;
+    display: none;
     font-family: "Freeman", serif;
     font-weight: 400;
     font-style: normal;
