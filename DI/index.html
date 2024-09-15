@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DI Team Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .team {
+            margin-bottom: 20px;
+        }
+        .timeline {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .segment {
+            background-color: #4CAF50;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            flex: 1;
+        }
+        .current {
+            background-color: purple;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="team" id="team1">
+        <h2>Team 1</h2>
+        <div class="timeline">
+            <div class="segment" id="team1-current">Loading...</div>
+        </div>
+    </div>
+
+    <div class="team" id="team2">
+        <h2>Team 2</h2>
+        <div class="timeline">
+            <div class="segment" id="team2-current">Loading...</div>
+        </div>
+    </div>
+
+    <script>
+        function fetchActivity(teamId) {
+            fetch(`/activity/${teamId}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById(`${teamId}-current`).innerText = data.activity;
+                })
+                .catch(err => console.error(err));
+        }
+
+        function update() {
+            fetchActivity('team1');
+            fetchActivity('team2');
+        }
+
+        setInterval(update, 60000);  // Refresh every minute
+        update();  // Initial call
+    </script>
+</body>
+</html>

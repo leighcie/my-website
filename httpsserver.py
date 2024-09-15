@@ -17,3 +17,25 @@ httpd.socket = ssl.wrap_socket(httpd.socket,
 
 print("Serving on port 443 with HTTPS...")
 httpd.serve_forever()
+
+teams ={
+    "team1": [
+        {"activity": "Stand Up", "duration": 20, "start": "11:00"},
+        {"activity": "Instant Challenge", "duration": 15, "start": "11:20"},
+        {"activity": "Snack", "duration": 15, "start": "11:35"},
+        {"activity": "Build", "duration": 55, "start": "11:50"},
+        {"activity": "Clean Up", "duration": 15, "start": "12:45"}
+    ],
+    "team2": [
+        {"activity": "Stand Up", "duration": 20, "start": "14:00"},
+        {"activity": "Build", "duration": 55, "start": "14:20"},
+        {"activity": "Snack", "duration": 15, "start": "15:15"},
+        {"activity": "Instant Challenge", "duration": 15, "start": "15:30"},
+        {"activity": "Clean Up", "duration": 15, "start": "15:45"}
+    ]
+}
+
+# Adding endpoint for Activity
+@app.route('/activity', methods=['GET'])
+def activity():
+    return jsonify({'activity': activity}) 
