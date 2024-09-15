@@ -7,67 +7,139 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 50px;
+            text-align: center;
         }
+
+        .team-container {
+            margin: 20px 0;
+        }
+
         .team {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 10px;
             margin-bottom: 20px;
+            color: white;
+            font-size: 24px;
         }
+
+        .team-1 { background-color: #E8D9FF; }
+        .team-2 { background-color: #D9EFFF; }
+
         .timeline {
             display: flex;
-            width: 100%;
-            justify-content: space-between;
+            justify-content: space-around;
+            position: relative;
         }
-        .segment {
-            background-color: #4CAF50;
-            padding: 10px;
+
+        .activity {
+            flex-grow: 1;
+            background-color: #28a745;
+            padding: 15px;
+            margin: 5px;
             color: white;
-            text-align: center;
-            flex: 1;
+            border-radius: 5px;
         }
-        .current {
+
+        .character {
+            position: absolute;
+            top: -30px;
+            width: 30px;
+            height: 30px;
             background-color: purple;
             border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            position: absolute;
+            transition: left 1s ease;
         }
     </style>
 </head>
 <body>
-    <div class="team" id="team1">
-        <h2>Team 1</h2>
-        <div class="timeline">
-            <div class="segment" id="team1-current">Loading...</div>
+    <div class="team-container">
+        <div class="team team-1">Team 1</div>
+        <div class="timeline" id="timeline-1">
+            <div class="activity">Stand Up</div>
+            <div class="activity">Instant Challenge</div>
+            <div class="activity">Snack</div>
+            <div class="activity">Build</div>
+            <div class="activity">Clean Up</div>
+            <div class="character" id="char-1"></div>
         </div>
     </div>
 
-    <div class="team" id="team2">
-        <h2>Team 2</h2>
-        <div class="timeline">
-            <div class="segment" id="team2-current">Loading...</div>
+    <div class="team-container">
+        <div class="team team-2">Team 2</div>
+        <div class="timeline" id="timeline-2">
+            <div class="activity">Stand Up</div>
+            <div class="activity">Build</div>
+            <div class="activity">Snack</div>
+            <div class="activity">Instant Challenge</div>
+            <div class="activity">Clean Up</div>
+            <div class="character" id="char-2"></div>
         </div>
     </div>
 
     <script>
-        function fetchActivity(teamId) {
-            fetch(`/activity/${teamId}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById(`${teamId}-current`).innerText = data.activity;
-                })
-                .catch(err => console.error(err));
+        // Hardcoded schedule in minutes from the start time
+        const schedules = {
+            team1: {
+                start: "11:00",
+                activities: [20, 15, 15, 55, 15] // Stand Up, IC, Snack, Build, Clean Up
+            },
+            team2: {
+                start: "16:00",
+                activities: [20, 55, 15, 15, 15] // Stand Up, Build, Snack, IC, Clean Up
+            }
+        };
+
+        function getTimeMinutes(timeStr) {
+            const [hours, minutes] = timeStr.split(":").map(Number);
+            return hours * 60 + minutes;
         }
 
-        function update() {
-            fetchActivity('team1');
-            fetchActivity('team2');
+        function getCurrentMinutes() {
+            const now = new Date();
+            return now.getHours() * 60 + now.getMinutes();
         }
 
-        setInterval(update, 60000);  // Refresh every minute
-        update();  // Initial call
+        function updateCharacters() {
+            const nowMinutes = getCurrentMinutes();
+
+            // Calculate positions for both teams
+            updateCharacter("char-1", schedules.team1, nowMinutes);
+            updateCharacter("char-2", schedules.team2, nowMinutes);
+        }
+
+        function updateCharacter(charId, teamSchedule, nowMinutes) {
+            const startMinutes = getTimeMinutes(teamSchedule.start);
+            let elapsedTime = nowMinutes - startMinutes;
+            let totalActivityTime = 0;
+
+            const char = document.getElementById(charId);
+            const timelineWidth = document.getElementById(charId).parentElement.offsetWidth;
+
+            if (elapsedTime < 0 || elapsedTime > teamSchedule.activities.reduce((a, b) => a + b, 0)) {
+                // Before start or after the schedule ends
+                char.style.left = '100%';
+                return;
+            }
+
+            for (let i = 0; i < teamSchedule.activities.length; i++) {
+                const activityDuration = teamSchedule.activities[i];
+                totalActivityTime += activityDuration;
+
+                if (elapsedTime <= totalActivityTime) {
+                    const progress = (elapsedTime - (totalActivityTime - activityDuration)) / activityDuration;
+                    const newLeft = (i + progress) * (timelineWidth / teamSchedule.activities.length);
+                    char.style.left = `${newLeft}px`;
+                    break;
+                }
+            }
+        }
+
+        // Initial call and update every minute
+        updateCharacters();
+        setInterval(updateCharacters, 60000);
     </script>
 </body>
 </html>

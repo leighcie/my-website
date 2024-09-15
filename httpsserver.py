@@ -35,7 +35,9 @@ teams ={
     ]
 }
 
-# Adding endpoint for Activity
-@app.route('/activity', methods=['GET'])
-def activity():
-    return jsonify({'activity': activity}) 
+# Adding endpoint to get the activity for a team
+@app.route('/activity/<team>')
+def get_activity(team):
+    return jsonify(teams[team])
+    
+
