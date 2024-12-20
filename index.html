@@ -3,50 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leighcie Gregg | Product Owner</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <title>Leighcie Gregg | Portfolio</title>
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="header-left">
-                <h1>Leighcie Gregg <span class="title">| Product Owner</span></h1>
-            </div>
-            <nav class="header-right">
-                <ul>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#github">Github</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+<div class="tabs-container">
+    <div class="profile-section">
+        <div class="name-container">
+            <div class="first-name">Leighcie</div>
+            <div class="last-name">Gregg</div>
         </div>
-    </header>
-    <section class="intro">
-      <img src="landz.jpg" alt="Leighcie Gregg" class="profile-pic">
-      <div class="intro-text">
-          <h3>Hello</h3>
-          <p class="subheading">A Bit About Me</p>
-          <p>I am a Product Manager with a decade of experience in building user-focused software products. My career began with creating a data reconciliation tool for the mortgage industry, and I have since specialized in complex automated workflows and service-oriented architecture. My journey has taken me through roles in both the mortgage and insurance industries, where I have consistently delivered innovative solutions to meet regulatory and user needs.
+        <img src="landz.jpg" alt="Leighcie Gregg" class="profile-photo">
+    </div>
 
-I am married to a brilliant software engineer, and together we share our home with our two cats, Ajira and Schema. Outside of work, I enjoy spending time with my family, exploring new technologies, and continuously learning to stay ahead in the ever-evolving tech landscape.</p>
-          <div class="buttons">
-              <a href="Resume_Leighcie_Gregg.pdf" class="button resume-button">Resume</a>
-              <a href="http://www.leighcie.com/case-studies.html" class="button case-studies-button">Case Studies</a>
-              <a href="https://github.com/leighcie?tab=repositories" class="button projects-button">Github</a>
-              <a href="#" class="button contact-button" onclick="toggleContactInfo()">Contact</a>
+    <nav class="main-tabs">
+        <button class="main-tab active" data-tab="about">About</button>
+        <button class="main-tab" data-tab="experience">Experience</button>
+        <button class="main-tab" data-tab="work">Work</button>
+        <button class="main-tab" data-tab="contact">Contact</button>
+    </nav>
+
+    <div class="main-content active" id="about">
+        <h2>About Me</h2>
+        <p>As a Product Manager with over a decade of experience in building user-focused software products, I thrive on transforming complex technical challenges into elegant solutions that make a real difference for users. My career began with creating a data reconciliation tool for the mortgage industry, and I have since specialized in complex automated workflows and service-oriented architecture.</p>
+        <p>I excel in leading cross-functional teams through agile methodologies, particularly in regulated industries like healthcare and finance. My approach combines strategic thinking with hands-on problem-solving, ensuring that we not only meet technical requirements but also deliver exceptional user experiences.</p>
+        <p>What truly drives me is the opportunity to bridge the gap between technical capabilities and user needs. Whether it's streamlining healthcare processes or enhancing financial services, I take pride in creating solutions that make complex systems more accessible and efficient for everyone involved.</p>
+    </div>
+
+    <div class="main-content" id="experience">
+        <div class="experience-container">
+            <div class="company-tabs">
+                <button class="company-tab active" data-tab="artech">Artech</button>
+                <button class="company-tab" data-tab="connect">Connect for Health Colorado</button>
+                <button class="company-tab" data-tab="metasource">MetaSource</button>
+                <button class="company-tab" data-tab="jnd">JND Legal Administration</button>
+                <button class="company-tab" data-tab="titan">Titan Lenders Corp</button>
             </div>
-            <div id="contact-info">
-                <p>Email: leighciegregg@gmail.com</p>
-                <p>Phone: 303-549-1293</p>
+
+            <div class="content-section active" id="artech">
+                <h3 class="job-title">Product Owner</h3>
+                <h4 class="company-name">Artech</h4>
+                <p class="date-range">Aug 2024 - present</p>
+                <ul class="achievements">
+                    <li>Leading enterprise data warehouse transformation program with 8-person distributed development team across US and India time zones.</li>
+                    <li>Provided predictable delivery cycles by establishing a formal refinement process 3+ sprints in advance, creating clear documentation standards, and coordinating daily ceremonies across time zones to maintain team alignment.</li>
+                    <li>Prioritized and coordinated ETL development work across data warehouse platforms (Redshift, Athena, S3, Snowflake), ensuring alignment with business goals and timely delivery of data solutions.</li>
+                    <li>Improved sprint planning accuracy by partnering with Scrum Master to implement structured backlog management, team KPIs, and regular iteration demos.</li>
+                </ul>
             </div>
-      </div>
-  </section>
-  <script>
-    function toggleContactInfo() {
-        var info = document.getElementById("contact-info");
-        info.style.display = info.style.display === "block" ? "none" : "block";
-    }
+
+            <div class="content-section" id="connect">
+                <h3 class="job-title">Product Owner</h3>
+                <h4 class="company-name">Connect for Health Colorado</h4>
+                <p class="date-range">June 2021 - Dec 2023</p>
+                <ul class="achievements">
+                    <li>Led the implementation of customer information verification with the CMS federal Data Services Hub</li>
+                    <li>Led replacement of legacy systems with cloud-based microservices architecture (AWS, Java, Spring Boot)</li>
+                    <li>Collaborated with agile teams to reduce renewals processing downtime from 8 days to 18 hours</li>
+                    <li>Partnered with customers, product, business, UX, and engineering to set and drive product strategy and vision</li>
+                    <li>Developed and executed prioritized product roadmap for health insurance affordability applications</li>
+                    <li>Led a diverse team of engineers, technical quality assurance analysts, and business analysts</li>
+                    <li>Ensured high-performing team velocity through effective leadership, coaching, and resource allocation</li>
+                    <li>Coordinated dependencies, risks, and releases with seven other teams</li>
+                </ul>
+            </div>
+
+            <div class="content-section" id="metasource">
+                <h3 class="job-title">Product Manager</h3>
+                <h4 class="company-name">MetaSource</h4>
+                <p class="date-range">June 2018 - May 2021</p>
+                <ul class="achievements">
+                    <li>Enhanced system processing to handle increased client load, boosting monthly records from 4M to 11M</li>
+                    <li>Led database conversion from Postgres to MS SQL post-acquisition</li>
+                    <li>Conducted product discovery and customer research, generating 4,000 new leads with a 5% conversion rate</li>
+                    <li>Customized implementation measures to ensure minimal disruption to client operations</li>
+                </ul>
+            </div>
+
+            <div class="content-section" id="jnd">
+                <h3 class="job-title">Business Analyst</h3>
+                <h4 class="company-name">JND Legal Administration</h4>
+                <p class="date-range">June 2017 - June 2018</p>
+                <ul class="achievements">
+                    <li>Improved weekly forecast analysis and developed ad-hoc reports for decision-making</li>
+                    <li>Ensured data accuracy through quality assurance processes</li>
+                    <li>Recommended process improvements to mitigate operational and financial risks</li>
+                    <li>Managed and organized Access databases for client and settlement data</li>
+                </ul>
+            </div>
+
+            <div class="content-section" id="titan">
+                <h3 class="job-title">Product Owner</h3>
+                <h4 class="company-name">Titan Lenders Corp</h4>
+                <p class="date-range">Feb 2013 - June 2017</p>
+                <ul class="achievements">
+                    <li>Led software system deprecation and implementation projects, including data migration and training</li>
+                    <li>Trained internal machine learning document recognition systems, achieving 92% OCR success rate</li>
+                    <li>Launched Mintrak®2, a SaaS data reconciliation and remediation platform</li>
+                    <li>Developed and brought to market DRMS QC™ and DRMS Pro™ systems</li>
+                    <li>Conducted extensive market research and competitive analysis to inform product decisions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content" id="work">
+        <h2>Work</h2>
+        <div class="github-link" style="margin-bottom: 2rem;">
+            <a href="https://github.com/leighcie/" target="_blank" rel="noopener noreferrer" 
+               style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; 
+                      background: #2d3748; color: white; border-radius: 0.5rem; text-decoration: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" 
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                View GitHub Profile
+            </a>
+        </div>
+
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Case Studies</h3>
+        
+        <div class="case-studies">
+            <div class="case-study">
+                <button class="case-study-toggle" aria-expanded="false">
+                    <h4>Redesigning the Renewals Process for the State Insurance Marketplace</h4>
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="case-study-content">
+                    <section>
+                        <h5>Overview</h5>
+                        <p>I spearheaded the overhaul of the renewals process for the state insurance marketplace to enhance efficiency and user experience.</p>
+                    </section>
+                    <section>
+                        <h5>Problem Statement</h5>
+                        <p>The renewals process required manual initiation and continuous monitoring, leading to substantial system downtimes—typically exceeding 8 calendar days.</p>
+                    </section>
+                    <section>
+                        <h5>Solution</h5>
+                        <p>We mapped out existing processes and pain points, then evaluated our newly designed service-oriented architecture for enhancements. This included conducting detailed analysis, mapping workflows, designing automated solutions, and implementing the new process in an AWS environment.</p>
+                    </section>
+                    <section>
+                        <h5>Results</h5>
+                        <p>The new automated process successfully processed 87% of renewals within 24 hours, surpassing our goal to process 80% of renewals within 3 days.</p>
+                    </section>
+                    <section>
+                        <h5>Key Learnings</h5>
+                        <p>Success relies on shared ownership across teams. The process involved multiple teams, requiring intensive collaboration under tight deadlines. Effective collaboration, documentation of edge cases, and streamlined error handling were key to success.</p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <button class="case-study-toggle" aria-expanded="false">
+                    <h4>Enhancing Data Reconciliation Corrections for the Mortgage Industry</h4>
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="case-study-content">
+                    <section>
+                        <h5>Overview</h5>
+                        <p>I led the enhancement of Mintrak2, a SaaS platform used by servicers and sub-servicers in the mortgage industry, to improve efficiency and user satisfaction in data reconciliation with the MERS registry.</p>
+                    </section>
+                    <section>
+                        <h5>Problem Statement</h5>
+                        <p>Customers frequently encountered the same discrepancies each month due to delayed system updates, making the reconciliation process inefficient and frustrating.</p>
+                    </section>
+                    <section>
+                        <h5>Solution</h5>
+                        <p>We analyzed existing processes and customer feedback, then implemented targeted improvements including discrepancy sorting for prioritization and a custom export feature for IT teams.</p>
+                    </section>
+                    <section>
+                        <h5>Results</h5>
+                        <p>The new features led to significantly happier clients and a 60% reduction in recurring discrepancies within 3 months, exceeding our target of 50% reduction within 6 months.</p>
+                    </section>
+                    <section>
+                        <h5>Key Learnings</h5>
+                        <p>Detailed and iterative testing is essential, especially when dealing with custom file types. Effective communication and collaboration across teams ensured alignment, while keeping the design intuitive was critical for user adoption.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content" id="contact">
+        <h2>Contact</h2>
+        <p>Email: leighciegregg@gmail.com</p>
+        <p>Phone: 303-549-1293</p>
+    </div>
+</div>
+
+<script>
+    // Main tab navigation
+    document.querySelectorAll('.main-tab').forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all tabs and content
+            document.querySelectorAll('.main-tab').forEach(btn => 
+                btn.classList.remove('active'));
+            document.querySelectorAll('.main-content').forEach(content => 
+                content.classList.remove('active'));
+            
+            // Add active class to clicked tab and its content
+            button.classList.add('active');
+            const tabContent = document.getElementById(button.dataset.tab);
+            if (tabContent) {
+                tabContent.classList.add('active');
+            }
+        });
+    });
+
+    // Company tab navigation
+    document.querySelectorAll('.company-tab').forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all company tabs and sections
+            document.querySelectorAll('.company-tab').forEach(btn => 
+                btn.classList.remove('active'));
+            document.querySelectorAll('.content-section').forEach(content => 
+                content.classList.remove('active'));
+            
+            // Add active class to clicked tab and its content
+            button.classList.add('active');
+            const tabContent = document.getElementById(button.dataset.tab);
+            if (tabContent) {
+                tabContent.classList.add('active');
+            }
+        });
+    });
+
+    // Case study toggle
+    document.querySelectorAll('.case-study-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            
+            button.setAttribute('aria-expanded', !isExpanded);
+            content.classList.toggle('active');
+        });
+    });
 </script>
 </body>
 </html>

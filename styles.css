@@ -1,247 +1,393 @@
-/* Global styles */
-* {
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap');
 
-body, h1, h2, h3, p, ul, li, a {
+* {
     margin: 0;
     padding: 0;
-    list-style: none;
-    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-    font-family: 'Josefin Sans', sans-serif;
-    color: #333;
-    background: #fff;
-    line-height: 1.6;
-}
-
-.container {
-    width: 100%;
-    padding: 10px 20px;
-}
-
-/* Header styles */
-header {
-    background: #ffffff;
-}
-
-.header-container {
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    background: #f8f9fc;
+    padding: 2rem;
+    color: #2d3748;
 }
 
-.header-left h1 {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1em;
+.tabs-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 600px;
+}
+
+.profile-section {
+    position: absolute;
+    top: -100px;
+    right: 2rem;
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.name-container {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+.first-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #2d3748;
+}
+
+.last-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #4a5568;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.main-tabs {
+    display: flex;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.main-tab {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    border-radius: 0.75rem 0.75rem 0 0;
+    border: 1px solid #e2e8f0;
+    border-bottom: none;
+}
+
+.main-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: currentColor;
+    opacity: 0.05;
+    transition: opacity 0.3s ease;
+}
+
+.main-tab:hover::before {
+    opacity: 0.1;
+}
+
+.main-tab.active {
+    background: white;
+    z-index: 2;
+}
+
+.main-tab:nth-child(1) { color: #4299e1; }
+.main-tab:nth-child(2) { color: #68d391; }
+.main-tab:nth-child(3) { color: #9f7aea; }
+.main-tab:nth-child(4) { color: #ed64a6; }
+
+.main-content {
+    background: white;
+    padding: 2rem;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-radius: 0 1rem 1rem 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.main-content.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.experience-container {
+    display: flex;
+    gap: 2rem;
+    min-height: 400px;
+    position: relative;
+}
+
+.company-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 250px;
+    position: relative;
+    z-index: 2;
+}
+
+.company-tab {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0.75rem 0 0 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-right: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.company-tab.active {
+    background: white;
+    box-shadow: -2px 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 2;
+}
+
+.company-tab:nth-child(1) { color: #3182ce; }
+.company-tab:nth-child(2) { color: #48bb78; }
+.company-tab:nth-child(3) { color: #805ad5; }
+.company-tab:nth-child(4) { color: #d53f8c; }
+.company-tab:nth-child(5) { color: #ed64a6; }
+
+.content-section {
+    position: absolute;
+    left: 270px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+    background: white;
+    padding: 2rem;
+    border-radius: 0 1rem 1rem 1rem;
+    border: 1px solid #e2e8f0;
+}
+
+.content-section.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+h2 {
+    font-family: 'DM Sans', sans-serif;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 
-.header-left .title {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 400;
-    font-size: 1em;
+.job-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
-.header-right {
-    display: none; /* This hides the navigation links */
+.company-name {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
-.header-right ul {
-    display: flex;
-    gap: 20px;
+.date-range {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 2rem;
 }
 
-.header-right li {
-    list-style-type: none;
+p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
 }
 
-.header-right a {
-    color: #000;
-    font-size: 1em;
-    padding: 5px 10px;
-    transition: color 0.3s;
+.achievements {
+    list-style: none;
 }
 
-.header-right a:hover, .header-right a:focus {
-    color: #555;
+.achievements li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
 }
 
-/* Intro section styles */
-.intro {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 50px 0;
+.achievements li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #4299e1;
 }
 
-.profile-pic {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.intro-text {
-    max-width: 600px;
-}
-
-.intro-text h3 {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 2.2em;
-}
-
-.intro-text .subheading {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.5em;
-    margin-bottom: 1em;
-}
-
-.intro-text p {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1em;
-    margin-bottom: 2em;
-}
-
-.buttons .button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 50px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    margin-right: 10px;
-    transition: background-color 0.3s, opacity 0.2s;
-    font-size: 1em;
-}
-
-.resume-button {
-    background-color: #5c3c92; /* Purple */
-}
-
-.case-studies-button {
-    background-color: #f7b801; /* Yellow */
-}
-
-.projects-button {
-    background-color: #077b8a; /* Teal */
-}
-
-.contact-button {
-    background-color: #d72631; /* Red */
-}
-
-#contact-info {
-    margin-top: 20px;
-    text-align: center;
-    background: #f9f9f9; /* A light background to distinguish the info */
-    padding: 20px;
-    border-radius: 8px; /* for a slight rounded corner */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-    display: none; /* Hidden by default */
-}
-
-#contact-info.visible {
-    height: 100px; /* Set this to the height needed for your contact info */
-    padding: 20px; /* Only add padding when visible to maintain the layout */
-}
-
-#contact-info p {
-    font-size: 1em;
-    color: #333; /* Matching the color scheme */
-    margin: 10px 0; /* Space out the email and phone number */
-    line-height: 1.4;
-}
-
-/* Responsive design adjustments */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .header-right ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .header-right a {
-        display: block;
-        width: 100%;
-    }
-    .intro {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro-text, .buttons .button {
-        max-width: 100%;
-    }
-
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .buttons .button {
-        margin-bottom: 10px; /* Stack the buttons with space between */
-        margin-right: 0;
-    }
-}
-
-/* case-study styles */
-main {
+/* Case Studies Styles */
+.case-studies {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-}
-
-.case-study-container {
-    margin-bottom: 20px;
-}
-/* The images are clickable */
-#case-study-image-1, #case-study-image-2 {
-    cursor: pointer;
+    gap: 1rem;
 }
 
 .case-study {
-    margin-top: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.case-study-toggle {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.case-study-toggle:hover {
+    background: #f8f9fc;
+}
+
+.case-study-toggle h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.case-study-content {
     display: none;
-    font-family: "Freeman", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #333;
+    padding: 1rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.case-study-content.active {
+    display: block;
+}
+
+.case-study-content section {
+    margin-bottom: 1.5rem;
+}
+
+.case-study-content section:last-child {
+    margin-bottom: 0;
+}
+
+.case-study-content h5 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+}
+
+.case-study-content p {
+    color: #718096;
     line-height: 1.6;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-.case-study h2 {
-    font-family: 'Freeman', serif;
-    color: #444;
-    margin-top: 20px;
+.arrow {
+    transition: transform 0.2s ease;
 }
 
-.case-study h3 {
-    font-family: 'Freeman', serif;
-    color: #666;
-    margin-top: 10px;
+.case-study-toggle[aria-expanded="true"] .arrow {
+    transform: rotate(180deg);
 }
 
-.case-study p {
-    margin: 10px 0;
+.github-link a {
+    transition: background-color 0.2s ease;
 }
 
-.case-study ul {
-    padding-left: 20px;
+.github-link a:hover {
+    background: #4a5568 !important;
 }
 
-.case-study ul li {
-    margin-bottom: 10px;
+@media (max-width: 768px) {
+    .tabs-container {
+        min-height: 800px;
+    }
+
+    .experience-container {
+        flex-direction: column;
+    }
+
+    .company-tabs {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+
+    .company-tab {
+        border: 1px solid #e2e8f0;
+        border-radius: 2rem;
+        white-space: nowrap;
+        min-width: 200px;
+    }
+
+    .content-section {
+        position: absolute;
+        left: 0;
+        top: 80px;
+        transform: translateY(20px);
+        border-radius: 1rem;
+    }
+
+    .content-section.active {
+        transform: translateY(0);
+    }
+
+    .main-tabs {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .main-tab {
+        flex: 1;
+        min-width: calc(50% - 0.5rem);
+        text-align: center;
+    }
+
+    .profile-section {
+        position: relative;
+        top: 0;
+        right: 0;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .name-container {
+        text-align: center;
+        margin-bottom: 0;
+    }
 }
