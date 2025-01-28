@@ -142,12 +142,13 @@ body {
     opacity: 0;
     transform: translateX(50vw);
     position: relative;
-    transition: all 2.5s linear;
+    transition: none;
 }
 
 .about-sentence.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0); 
+    transition: transform 2.5s linear, opacity 2.5s linear;
 }
 
 .experience-container {
