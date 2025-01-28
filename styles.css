@@ -137,6 +137,19 @@ body {
     transform: translateY(0);
 }
 
+/* New animation styles for About section */
+.about-sentence {
+    opacity: 0;
+    transform: translateX(50vw);
+    position: relative;
+    transition: all 2.5s linear;
+}
+
+.about-sentence.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .experience-container {
     display: flex;
     gap: 2rem;
