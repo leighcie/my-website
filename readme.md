@@ -7,7 +7,7 @@ Personal portfolio website showcasing work experience, projects, and contact inf
 - **Hosting**: GCP Compute Engine (instance-1)
 - **Domain**: www.leighcie.com
 - **Server**: Python HTTPS Server
-- **SSL**: Let's Encrypt
+- **SSL**: SSL: Let's Encrypt with auto-renewal and server restart
 
 ## Quick Start
 
@@ -39,11 +39,21 @@ sudo journalctl -u https-server
 
 ## SSL Certificates
 
-Certificates auto-renew via crontab. Manual renewal if needed:
+Certificates auto-renew via crontab with automatic server restart. The renewal hook is configured in /etc/letsencrypt/renewal-hooks/deploy/restart-https-server.sh. 
+
+Manual renewal if needed:
 
 ```bash
 sudo certbot renew
 ```
+To verify renewal hook setup:
+bash
+
+# Check if hook exists and is executable
+ls -l /etc/letsencrypt/renewal-hooks/deploy/
+
+# Test renewal process (dry run)
+sudo certbot renew --dry-run
 
 ## Deployment
 
