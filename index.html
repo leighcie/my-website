@@ -3,271 +3,388 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>Leighcie Gregg | Portfolio</title>
+    <title>Leighcie Gregg | Product Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #00072D;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 7, 45, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(209, 116, 210, 0.3);
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #D174D2;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #E0563F;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: #00072D;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 100;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: #D174D2;
+            margin: 0 auto 3rem auto;
+        }
+
+        .photo-container {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #D174D2;
+            box-shadow: 0 8px 32px rgba(209, 116, 210, 0.4);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 100;
+            color: #D174D2;
+            letter-spacing: 1px;
+        }
+
+        /* Sections - Full width backgrounds */
+        .section {
+            min-height: 100vh;
+            padding: 100px 0;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 80px;
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            font-weight: 100;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        /* About Section - White background */
+        #about {
+            background: #f8f9fa;
+            color: #00072D;
+        }
+
+        #about h2 {
+            color: #00072D;
+        }
+
+        #about p {
+            color: #4a5568;
+        }
+
+        /* Portfolio Section - Deep navy background */
+        #portfolio {
+            background: #00072D;
+            color: #ffffff;
+        }
+
+        #portfolio h2 {
+            color: #ffffff;
+        }
+
+        #portfolio p {
+            color: #ffffff;
+        }
+
+        /* Contact Section - White background */
+        #contact {
+            background: #f8f9fa;
+            color: #00072D;
+        }
+
+        #contact h2 {
+            color: #00072D;
+        }
+
+        #contact p {
+            color: #4a5568;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .coffee-cup {
+                width: 200px;
+                height: 120px;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-content {
+                padding: 0 30px;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .pencil {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="tabs-container">
-    <div class="profile-section">
-        <div class="name-container">
-            <div class="first-name">Leighcie</div>
-            <div class="last-name">Gregg</div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#top" class="logo">Leighcie Gregg</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
         </div>
-        <img src="landz.jpg" alt="Leighcie Gregg" class="profile-photo">
-    </div>
-
-    <nav class="main-tabs">
-        <button class="main-tab active" data-tab="about">About</button>
-        <button class="main-tab" data-tab="experience">Experience</button>
-        <button class="main-tab" data-tab="work">Projects</button>
-        <button class="main-tab" data-tab="contact">Contact</button>
     </nav>
 
-    <div class="main-content active" id="about">
-        <h2>About Me</h2>
-        <div id="about-sentences">
-            <p class="about-sentence">I help teams solve problems by asking the right questions.</p>
-            <p class="about-sentence">I create workflows that feel obvious and natural to users.</p>
-            <p class="about-sentence">I transform good ideas into real products.</p>
-        </div>
-        <h2>How I Work</h2>
-        <p>I love building products that make a difference. I believe great solutions come from blending different experiences, skills, and ideas. I get excited about uncovering insights from data and hearing directly from users and stakeholders to drive our decisions forward. I believe teams learn best by trying things out, so I guide us toward quick experiments instead of long discussions. I keep our work focused and clear, centered on what users truly need.</p>
-    </div>
-
-    <div class="main-content" id="experience">
-        <div class="experience-container">
-            <div class="company-tabs">
-                <button class="company-tab active" data-tab="artech">IBM</button>
-                <button class="company-tab" data-tab="connect">Connect for Health Colorado</button>
-                <button class="company-tab" data-tab="metasource">MetaSource</button>
-                <button class="company-tab" data-tab="jnd">JND Legal Administration</button>
-                <button class="company-tab" data-tab="titan">Titan Lenders Corp</button>
-            </div>
-            <div class="content-section active" id="artech">
-                <h3 class="job-title">Product Owner</h3>
-                <h4 class="company-name">IBM</h4>
-                <p class="date-range">Aug 2024 - Feb 2025</p>
-                <ul class="achievements">
-                    <li>Leading enterprise data warehouse transformation program with 8-person distributed development team across US and India time zones.</li>
-                    <li>Provided predictable delivery cycles by establishing a formal refinement process 3+ sprints in advance, creating clear documentation standards, and coordinating daily ceremonies across time zones to maintain team alignment.</li>
-                    <li>Prioritized and coordinated ETL development work across data warehouse platforms (Redshift, Athena, S3, Snowflake), ensuring alignment with business goals and timely delivery of data solutions.</li>
-                    <li>Improved sprint planning accuracy by partnering with Scrum Master to implement structured backlog management, team KPIs, and regular iteration demos.</li>
-                </ul>
-            </div>
-
-            <div class="content-section" id="connect">
-                <h3 class="job-title">Product Owner</h3>
-                <h4 class="company-name">Connect for Health Colorado</h4>
-                <p class="date-range">June 2021 - Dec 2023</p>
-                <ul class="achievements">
-                    <li>Led the implementation of customer information verification with the CMS federal Data Services Hub</li>
-                    <li>Led replacement of legacy systems with cloud-based microservices architecture (AWS, Java, Spring Boot)</li>
-                    <li>Collaborated with agile teams to reduce renewals processing downtime from 8 days to 18 hours</li>
-                    <li>Partnered with customers, product, business, UX, and engineering to set and drive product strategy and vision</li>
-                    <li>Developed and executed prioritized product roadmap for health insurance affordability applications</li>
-                    <li>Led a diverse team of engineers, technical quality assurance analysts, and business analysts</li>
-                    <li>Ensured high-performing team velocity through effective leadership, coaching, and resource allocation</li>
-                    <li>Coordinated dependencies, risks, and releases with seven other teams</li>
-                </ul>
-            </div>
-
-            <div class="content-section" id="metasource">
-                <h3 class="job-title">Product Manager</h3>
-                <h4 class="company-name">MetaSource</h4>
-                <p class="date-range">June 2018 - May 2021</p>
-                <ul class="achievements">
-                    <li>Enhanced system processing to handle increased client load, boosting monthly records from 4M to 11M</li>
-                    <li>Led database conversion from Postgres to MS SQL post-acquisition</li>
-                    <li>Conducted product discovery and customer research, generating 4,000 new leads with a 5% conversion rate</li>
-                    <li>Customized implementation measures to ensure minimal disruption to client operations</li>
-                </ul>
-            </div>
-
-            <div class="content-section" id="jnd">
-                <h3 class="job-title">Business Analyst</h3>
-                <h4 class="company-name">JND Legal Administration</h4>
-                <p class="date-range">June 2017 - June 2018</p>
-                <ul class="achievements">
-                    <li>Improved weekly forecast analysis and developed ad-hoc reports for decision-making</li>
-                    <li>Ensured data accuracy through quality assurance processes</li>
-                    <li>Recommended process improvements to mitigate operational and financial risks</li>
-                    <li>Managed and organized Access databases for client and settlement data</li>
-                </ul>
-            </div>
-
-            <div class="content-section" id="titan">
-                <h3 class="job-title">Product Owner</h3>
-                <h4 class="company-name">Titan Lenders Corp</h4>
-                <p class="date-range">Feb 2013 - June 2017</p>
-                <ul class="achievements">
-                    <li>Led software system deprecation and implementation projects, including data migration and training</li>
-                    <li>Trained internal machine learning document recognition systems, achieving 92% OCR success rate</li>
-                    <li>Launched Mintrak®2, a SaaS data reconciliation and remediation platform</li>
-                    <li>Developed and brought to market DRMS QC™ and DRMS Pro™ systems</li>
-                    <li>Conducted extensive market research and competitive analysis to inform product decisions</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="main-content" id="work">
-        <h2>Projects</h2>
-        <div class="github-link" style="margin-bottom: 2rem;">
-            <a href="https://github.com/leighcie/" target="_blank" rel="noopener noreferrer" 
-               style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; 
-                      background: #2d3748; color: white; border-radius: 0.5rem; text-decoration: none;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" 
-                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-                View GitHub Profile
-            </a>
-        </div>
-
-        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Case Studies</h3>
+    <!-- Hero Section -->
+    <section id="top" class="hero">
+        <h1 class="hero-title">hi, i'm leighcie</h1>
+        <div class="accent-line"></div>
         
-        <div class="case-studies">
-            <div class="case-study">
-                <button class="case-study-toggle" aria-expanded="false">
-                    <h4>Redesigning the Renewals Process for the State Insurance Marketplace</h4>
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 9l6 6 6-6"/>
-                    </svg>
-                </button>
-                <div class="case-study-content">
-                    <section>
-                        <h5>Overview</h5>
-                        <p>I spearheaded the overhaul of the renewals process for the state insurance marketplace to enhance efficiency and user experience.</p>
-                    </section>
-                    <section>
-                        <h5>Problem Statement</h5>
-                        <p>The renewals process required manual initiation and continuous monitoring, leading to substantial system downtimes—typically exceeding 8 calendar days.</p>
-                    </section>
-                    <section>
-                        <h5>Solution</h5>
-                        <p>We mapped out existing processes and pain points, then evaluated our newly designed service-oriented architecture for enhancements. This included conducting detailed analysis, mapping workflows, designing automated solutions, and implementing the new process in an AWS environment.</p>
-                    </section>
-                    <section>
-                        <h5>Results</h5>
-                        <p>The new automated process successfully processed 87% of renewals within 24 hours, surpassing our goal to process 80% of renewals within 3 days.</p>
-                    </section>
-                    <section>
-                        <h5>Key Learnings</h5>
-                        <p>Success relies on shared ownership across teams. The process involved multiple teams, requiring intensive collaboration under tight deadlines. Effective collaboration, documentation of edge cases, and streamlined error handling were key to success.</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="case-study">
-                <button class="case-study-toggle" aria-expanded="false">
-                    <h4>Enhancing Data Reconciliation Corrections for the Mortgage Industry</h4>
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 9l6 6 6-6"/>
-                    </svg>
-                </button>
-                <div class="case-study-content">
-                    <section>
-                        <h5>Overview</h5>
-                        <p>I led the enhancement of Mintrak2, a SaaS platform used by servicers and sub-servicers in the mortgage industry, to improve efficiency and user satisfaction in data reconciliation with the MERS registry.</p>
-                    </section>
-                    <section>
-                        <h5>Problem Statement</h5>
-                        <p>Customers frequently encountered the same discrepancies each month due to delayed system updates, making the reconciliation process inefficient and frustrating.</p>
-                    </section>
-                    <section>
-                        <h5>Solution</h5>
-                        <p>We analyzed existing processes and customer feedback, then implemented targeted improvements including discrepancy sorting for prioritization and a custom export feature for IT teams.</p>
-                    </section>
-                    <section>
-                        <h5>Results</h5>
-                        <p>The new features led to significantly happier clients and a 60% reduction in recurring discrepancies within 3 months, exceeding our target of 50% reduction within 6 months.</p>
-                    </section>
-                    <section>
-                        <h5>Key Learnings</h5>
-                        <p>Detailed and iterative testing is essential, especially when dealing with custom file types. Effective communication and collaboration across teams ensured alignment, while keeping the design intuitive was critical for user adoption.</p>
-                    </section>
-                </div>
-            </div>
+        <div class="photo-container">
+            <img src="landz.jpg" alt="Leighcie Gregg" class="profile-photo">
         </div>
-    </div>
-
-    <div class="main-content" id="contact">
-        <h2>Contact</h2>
-        <p>Email: leighciegregg@gmail.com</p>
-        <p>Phone: 303-549-1293</p>
-    </div>
-</div>
-
-<script>
-    function animateAboutSentences() {
-        const sentences = document.querySelectorAll('.about-sentence');
-        sentences.forEach(sentence => sentence.classList.remove('visible'));
         
-        sentences.forEach((sentence, index) => {
-            setTimeout(() => {
-                sentence.classList.add('visible');
-            }, index * 2000); // 2 second delay between each sentence
-        });
-    }
-    
-    // Tab navigation
-    document.querySelectorAll('.main-tab').forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all tabs and content
-            document.querySelectorAll('.main-tab').forEach(btn => 
-                btn.classList.remove('active'));
-            document.querySelectorAll('.main-content').forEach(content => 
-                content.classList.remove('active'));
+        <p class="hero-subtitle">I'm a product manager.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-content">
+            <h2 style="text-align: center;">About</h2>
+            <p>I discovered product management by accident when I was hired as a "research analyst" at a mortgage operations company, but spent my days helping customers with login issues and broken software. That customer support role allowed me to work directly with developers to fix problems though. I would shadow audit teams to document failing workflows, and eventually I was the bridge between frustrated users and technical solutions. I'd lead demos and help potential customers see how our tools could transform their work - they'd go to conferences and tell people they couldn't do their jobs without what we built. Our sales team would say the product "sold itself." I was so proud of what we'd built.</p>
             
-            // Add active class to clicked tab and its content
-            button.classList.add('active');
-            const tabContent = document.getElementById(button.dataset.tab);
-            if (tabContent) {
-                tabContent.classList.add('active');
+            <p>Over the years I've worked across different company sizes and industries, but what stays consistent is my focus on deeply understanding users, translating between technical teams and business needs, building strong collaborative relationships across organizations, and creating things that people actually value.</p>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="LeighcieGregg_Resume0925.bin" download="LeighcieGregg_Resume0925.pdf" style="display: inline-block; padding: 12px 24px; background: #D174D2; color: white; text-decoration: none; border-radius: 6px; font-weight: 400; transition: background 0.3s ease;">View My Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="section-content">
+            <h2 style="text-align: center;">Portfolio</h2>
+            <p style="text-align: center;">Here are some examples of work that I've done recently...</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <!-- AI Clause Analyzer Project -->
+                <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border: 1px solid rgba(209, 116, 210, 0.3);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(209, 116, 210, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.open('coming-soon.html', '_blank')">
+                    <div style="width: 80px; height: 80px; background: #D174D2; border-radius: 50%; margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: bold;">AI</div>
+                    <h3 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 400;">AI Clause Analyzer</h3>
+                    <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">An intelligent tool that analyzes legal documents and extracts key clauses using natural language processing.</p>
+                    <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Python</span>
+                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">NLP</span>
+                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Machine Learning</span>
+                    </div>
+                </div>
                 
-                // If about tab is clicked, trigger the animation
-                if (button.dataset.tab === 'about') {
-                    animateAboutSentences();
-                }
-            }
-        });
-    });
-    
-    // Company tab navigation
-    document.querySelectorAll('.company-tab').forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all company tabs and sections
-            document.querySelectorAll('.company-tab').forEach(btn => 
-                btn.classList.remove('active'));
-            document.querySelectorAll('.content-section').forEach(content => 
-                content.classList.remove('active'));
+                <!-- API Spec Translator Project -->
+                <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border: 1px solid rgba(209, 116, 210, 0.3);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(209, 116, 210, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.open('coming-soon.html', '_blank')">
+                    <div style="width: 80px; height: 80px; background: #D174D2; border-radius: 50%; margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: bold;">API</div>
+                    <h3 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 400;">API Spec Translator</h3>
+                    <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">A comprehensive tool that translates API specifications between different formats and generates documentation.</p>
+                    <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">JavaScript</span>
+                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">OpenAPI</span>
+                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Documentation</span>
+                    </div>
+                </div>
+            </div>
             
-            // Add active class to clicked tab and its content
-            button.classList.add('active');
-            const tabContent = document.getElementById(button.dataset.tab);
-            if (tabContent) {
-                tabContent.classList.add('active');
-            }
-        });
-    });
-    
-    // Case study toggle
-    document.querySelectorAll('.case-study-toggle').forEach(button => {
-        button.addEventListener('click', () => {
-            const content = button.nextElementSibling;
-            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            <!-- Case Studies Section -->
+            <div style="margin-top: 5rem;">
+                <h3 style="text-align: center; font-size: 2.5rem; font-weight: 100; margin-bottom: 3rem; color: #ffffff; letter-spacing: -0.02em;">Case Studies</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+                    <!-- Case Study 1 -->
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2.5rem; border-left: 4px solid #D174D2; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid rgba(209, 116, 210, 0.3); cursor: pointer;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(209, 116, 210, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.open('coming-soon.html', '_blank')">
+                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div style="width: 50px; height: 50px; background: #D174D2; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <h4 style="color: #ffffff; font-size: 1.3rem; font-weight: 400; margin: 0;">Redesigning the Renewals Process</h4>
+                        </div>
+                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">Led a comprehensive redesign of the state insurance marketplace renewals process, resulting in improved user experience and increased completion rates.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">UX Research</span>
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Process Design</span>
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Stakeholder Management</span>
+                        </div>
+                        <div style="color: #D174D2; font-size: 0.9rem; font-weight: 500;">State Insurance Marketplace</div>
+                    </div>
+                    
+                    <!-- Case Study 2 -->
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2.5rem; border-left: 4px solid #D174D2; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid rgba(209, 116, 210, 0.3); cursor: pointer;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(209, 116, 210, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.open('coming-soon.html', '_blank')">
+                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div style="width: 50px; height: 50px; background: #D174D2; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                    <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.67 2 3 2.67 3 3.5v15c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5zM19 18.5H5V8h14v10.5z"/>
+                                </svg>
+                            </div>
+                            <h4 style="color: #ffffff; font-size: 1.3rem; font-weight: 400; margin: 0;">Enhancing Data Reconciliation Corrections</h4>
+                        </div>
+                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">Streamlined data reconciliation processes for mortgage industry clients, reducing manual errors and improving operational efficiency through strategic product improvements.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Data Analysis</span>
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Process Optimization</span>
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Mortgage Industry</span>
+                        </div>
+                        <div style="color: #D174D2; font-size: 0.9rem; font-weight: 500;">Mortgage Industry</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="text-align: center;">
+        <div class="section-content">
+            <h2>Contact</h2>
+            <p>Questions? Comments? Coffee?</p>
             
-            button.setAttribute('aria-expanded', !isExpanded);
-            content.classList.toggle('active');
-        });
-    });
-    
-    // Trigger animation on page load if about section is active
-    document.addEventListener('DOMContentLoaded', () => {
-        if (document.getElementById('about').classList.contains('active')) {
-            animateAboutSentences();
-        }
-    });
-    </script>
-    </body>
-    </html>
+            <p>I'd love to chat.</p>
+            
+            <div style="margin: 2rem 0;">
+                <a href="mailto:leighciegregg@gmail.com" style="color: #D174D2; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    email
+                </a>
+            </div>
+            
+            <p style="margin-bottom: 1rem;">You can also find me here:</p>
+            
+            <div style="display: flex; justify-content: center; gap: 2rem; align-items: center;">
+                <a href="https://bsky.app/profile/leighcie.com" style="color: #D174D2;" target="_blank" title="Bluesky">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 4c-2-2-5-2-7 0-1 1-1 3 0 4l3 3-3 3c-1 1-1 3 0 4 2 2 5 2 7 0l0-1 0 1c2 2 5 2 7 0 1-1 1-3 0-4l-3-3 3-3c1-1 1-3 0-4-2-2-5-2-7 0z"/>
+                        <circle cx="8" cy="8" r="1"/>
+                        <circle cx="16" cy="8" r="1"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/leighcie-gregg/" style="color: #D174D2;" target="_blank" title="LinkedIn">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/leighcie" style="color: #D174D2;" target="_blank" title="GitHub">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
