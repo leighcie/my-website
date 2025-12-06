@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mintrak®2 Case Study | Leighcie Gregg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #00072D;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 7, 45, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(209, 116, 210, 0.3);
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #D174D2;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #E0563F;
+        }
+
+        /* Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 40px 80px 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #D174D2;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 3rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #E0563F;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 100;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        .accent-line {
+            width: 80px;
+            height: 3px;
+            background: #D174D2;
+            margin: 2rem 0 3rem 0;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 100;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            color: #D174D2;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #D174D2;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .outcomes-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .outcomes-list li {
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .outcomes-list li:before {
+            content: "•";
+            color: #D174D2;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+        }
+
+        .quote {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #D174D2;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(209, 116, 210, 0.3);
+            margin: 3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 100px 20px 60px 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Leighcie Gregg</a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        <a href="index.html#portfolio" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+            Back to Portfolio
+        </a>
+
+        <h1>Mintrak®2 — Rebuilt a Mission-Critical SaaS Platform in 5 Months and Turned It Into a Product Users Bragged About</h1>
+        
+        <div class="accent-line"></div>
+
+        <div class="tags">
+            <span class="tag">Product Strategy & Vision</span>
+            <span class="tag">Execution & Technical Delivery</span>
+            <span class="tag">Business Impact & Market Growth</span>
+        </div>
+
+        <!-- Executive Summary -->
+        <section class="section">
+            <h2>Executive Summary</h2>
+            <p>When Titan Lenders Corp lost access to its outsourced reconciliation platform (Mintrak), we had 6 months to rebuild or risk losing 30 mortgage-servicer customers in a highly regulated MERS compliance market.</p>
+            <p>Instead of cloning the old system, I interviewed all customers and uncovered the deeper issue: the tool wasn't part of their workflow, created constant file-format headaches, and required IT involvement for even basic changes.</p>
+            
+            <div class="highlight-box">
+                <p><strong>The vision:</strong> A reconciliation tool anyone could use without IT, that accepted any file format, showed users exactly what was happening, and integrated naturally into monthly compliance workflows.</p>
+            </div>
+
+            <h3>Outcomes</h3>
+            <ul class="outcomes-list">
+                <li>Launched MVP in 5 months, migrated all customers with 0 churn</li>
+                <li>Scaled to 160+ customers and ~$5M ARR</li>
+                <li>Became a market leader; users publicly endorsed it at MERS conferences</li>
+                <li>Established trusted relationships with MERS, who validated our comparison logic over their internal tools</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- The Real Problem -->
+        <section class="section">
+            <h2>The Real Problem</h2>
+            <p>Although the urgent risk was losing platform access, discovery showed the deeper challenges:</p>
+            <ul>
+                <li><strong>Low technical accessibility:</strong> rigid file formats, error-prone uploads, IT dependency</li>
+                <li><strong>Zero transparency:</strong> users couldn't see what caused discrepancies or what they'd fixed</li>
+                <li><strong>No learning curve:</strong> many repeated the same issues monthly</li>
+                <li><strong>Industry backwardness:</strong> competitors required strict formats and took weeks to return results</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>Insight:</strong> Customers didn't just need reconciliation — they needed flexibility, visibility, and control.</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Product Vision -->
+        <section class="section">
+            <h2>Product Vision</h2>
+            <div class="highlight-box">
+                <p><strong>North Star:</strong> Flexible data in, transparent logic out, with self-service tools that remove IT from the equation.</p>
+            </div>
+
+            <h3>Three principles</h3>
+            <ol style="margin-left: 2rem;">
+                <li><strong>Flexibility over rigidity:</strong> accept the data users can provide</li>
+                <li><strong>Transparency over black box:</strong> show comparison logic and trends</li>
+                <li><strong>Self-service over dependency:</strong> empower users with mapping + resolution tools</li>
+            </ol>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- What We Built -->
+        <section class="section">
+            <h2>What We Built (MVP → Scale)</h2>
+            
+            <h3>MVP (5 months)</h3>
+            <ul>
+                <li>Support for core formats + discrepancy reporting</li>
+                <li>Self-service upload</li>
+                <li>Dashboard showing current & historical issues</li>
+                <li>Seamless migration of all existing customer mappings</li>
+            </ul>
+
+            <h3>Post-MVP</h3>
+            <ul>
+                <li>Custom file-mapping tool: "Bring any file format" became our #1 differentiator</li>
+                <li>Trend analysis, resolution tracking, and MERS-formatted export</li>
+                <li>Faster, clearer reconciliation workflows that reduced time from weeks to minutes/hours</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Execution Under Constraints -->
+        <section class="section">
+            <h2>Execution Under Constraints</h2>
+            <ul>
+                <li>2–3 outsourced devs, me handling product, UX, QA, and customer enablement</li>
+                <li>MVP built in 5 months, training + migration in month 6</li>
+                <li>Chose flexible JSON model to move fast, with a deliberate plan to refactor later</li>
+                <li>Sales enablement (training, one-pagers, bundled pricing) unlocked cross-sell to 200+ new customers across related MERS services</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Impact -->
+        <section class="section">
+            <h2>Impact</h2>
+            
+            <h3>Business</h3>
+            <ul>
+                <li>From 30 → 160+ customers</li>
+                <li>~$5M ARR with minimal operational overhead</li>
+                <li>Created scalable, product-led growth in a compliance-heavy market</li>
+            </ul>
+
+            <h3>Customer</h3>
+            <ul>
+                <li>Reconciliation dropped from weeks → minutes</li>
+                <li>Users gained visibility and control competitors couldn't match</li>
+            </ul>
+
+            <div class="quote">
+                "We use Mintrak®2 and I don't know why anyone would use anything else."
+                <br><span style="font-size: 0.9rem; font-style: normal; color: #D174D2;">— Customer statement at a MERS conference</span>
+            </div>
+
+            <h3>Industry</h3>
+            <ul>
+                <li>Built strong relationships with MERS; they validated our comparison logic and used our outputs to refine their own audit findings</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Why This Matters -->
+        <section class="section">
+            <h2>Why This Matters</h2>
+            <p>Mintrak®2 became a market-defining product because we treated a crisis as an opportunity to rethink the experience from scratch. Deep discovery + a strong vision + tangible execution turned a forced rebuild into a product customers loved — and advocated for publicly.</p>
+        </section>
+
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="index.html#portfolio" class="back-link" style="font-size: 1rem; padding: 12px 24px; background: #D174D2; color: white; text-decoration: none; border-radius: 6px; display: inline-block;">
+                Back to Portfolio
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewals Migration Case Study | Leighcie Gregg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #00072D;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 7, 45, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(209, 116, 210, 0.3);
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #D174D2;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #E0563F;
+        }
+
+        /* Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 40px 80px 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #D174D2;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 3rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #E0563F;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 100;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        .accent-line {
+            width: 80px;
+            height: 3px;
+            background: #D174D2;
+            margin: 2rem 0 3rem 0;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 100;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            color: #D174D2;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #D174D2;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .outcomes-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .outcomes-list li {
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .outcomes-list li:before {
+            content: "•";
+            color: #D174D2;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(209, 116, 210, 0.3);
+            margin: 3rem 0;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .impact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid #D174D2;
+        }
+
+        .impact-item strong {
+            color: #D174D2;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 100px 20px 60px 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Leighcie Gregg</a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        <a href="index.html#portfolio" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+            Back to Portfolio
+        </a>
+
+        <h1>Turned a Year-Long Stalled Migration Into a 5-Month Win (And Redesigned A Critical Process)</h1>
+        
+        <div class="accent-line"></div>
+
+        <div class="tags">
+            <span class="tag">Cross-Functional Leadership</span>
+            <span class="tag">Technical Strategy & Execution</span>
+            <span class="tag">Process Innovation & Scalability</span>
+        </div>
+
+        <!-- Context -->
+        <section class="section">
+            <h2>Context</h2>
+            <p>Connect for Health Colorado processes hundreds of thousands of insurance applications and renewals annually. A stalled microservices migration blocked teams from redesigning the renewals process, which required taking the platform offline for 8 days and intensive manual developer intervention each year.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Problem -->
+        <section class="section">
+            <h2>Problem</h2>
+            <ul>
+                <li><strong>Stalled Migration:</strong> After a year, only a few services were built; cross-team momentum was missing.</li>
+                <li><strong>Unsustainable Renewals Process:</strong> Processing took 8 days, involved constant developer monitoring, and caused customer service downtime.</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Vision -->
+        <section class="section">
+            <h2>Vision</h2>
+            <div class="highlight-box">
+                <p>Enable a fully automated, end-to-end renewals process: fast, reliable, and independent of constant developer intervention—while demonstrating the value of microservices to all teams.</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- What I Delivered -->
+        <section class="section">
+            <h2>What I Delivered</h2>
+            <ul>
+                <li>Coordinated 8 teams and 7 product owners to complete the microservices migration in 5 months.</li>
+                <li>Redesigned the renewals process: 8 days → 18 hours, zero downtime, no weekend monitoring.</li>
+                <li>Established documentation and collaboration patterns adopted across the organization.</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Execution -->
+        <section class="section">
+            <h2>Execution</h2>
+            <ul>
+                <li>Diagnosed the root cause: lack of technical understanding and buy-in among product owners.</li>
+                <li>Created momentum through public, cross-team commitments and visible timelines.</li>
+                <li>Prioritized migration work by showing near-term value for renewals redesign.</li>
+                <li>Implemented a new automated pipeline with isolated error handling and asynchronous resolution.</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Impact -->
+        <section class="section">
+            <h2>Impact</h2>
+            
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <strong>Processing time</strong>
+                    8 days → 18 hours (94% reduction)
+                </div>
+                <div class="impact-item">
+                    <strong>Platform availability</strong>
+                    1-day downtime (previously 8 days annually)
+                </div>
+                <div class="impact-item">
+                    <strong>Developer work</strong>
+                    Eliminated 24/7 monitoring and weekend shifts
+                </div>
+                <div class="impact-item">
+                    <strong>Organizational change</strong>
+                    Improved cross-team collaboration, documentation culture, and future project efficiency
+                </div>
+                <div class="impact-item">
+                    <strong>Customer experience</strong>
+                    Uninterrupted service during renewals, fewer errors
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Why It Matters -->
+        <section class="section">
+            <h2>Why It Matters</h2>
+            <p>This project demonstrates that complex technical initiatives succeed only when organizational dynamics are addressed alongside engineering challenges. By aligning teams, establishing momentum, and linking migration to tangible outcomes, we delivered speed, reliability, and scalability—transforming a previously "stalled" initiative into a reference point for organizational capability.</p>
+        </section>
+
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="index.html#portfolio" class="back-link" style="font-size: 1rem; padding: 12px 24px; background: #D174D2; color: white; text-decoration: none; border-radius: 6px; display: inline-block;">
+                Back to Portfolio
+            </a>
+        </div>
+    </div>
+</body>
+</html>
