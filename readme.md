@@ -6,90 +6,118 @@ Personal portfolio website showcasing work experience, projects, and contact inf
 
 - **Hosting**: GCP Compute Engine (instance-1)
 - **Domain**: www.leighcie.com
-- **Server**: Python HTTPS Server
-- **SSL**: SSL: Let's Encrypt with auto-renewal and server restart
+- **Server**: Node.js + Express (managed by pm2)
+- **SSL**: Let's Encrypt with auto-renewal
+
+## Architecture
+
+Two pm2 processes run on the server:
+
+- **main-server** (`~/main-server.js`) — serves the portfolio site over HTTPS on port 443, redirects HTTP (port 80) to HTTPS, and proxies `/clauseassist/api/*` to the API server
+- **clauseassist-api** (`/var/www/leighcie.com/clauseassist-api/server.js`) — Express API on port 3001 that handles Claude AI calls for the clause analyzer
+
+Static files:
+- Portfolio site: `/home/leighciegregg/my-website/`
+- Clause analyzer React build: `/var/www/leighcie.com/clauseassist/`
 
 ## Quick Start
 
 ```bash
-# Clone repository
-git clone <repository-url>
-cd my-website
+# Check status of both processes
+pm2 list
 
-# Start HTTPS server
-sudo systemctl start https-server
-
-# Check status
-sudo systemctl status https-server
+# View logs
+pm2 logs main-server
+pm2 logs clauseassist-api
 ```
 
 ## Server Management
 
-Basic commands for server maintenance:
+```bash
+# Restart servers
+pm2 restart main-server
+pm2 restart clauseassist-api
+pm2 restart all
+
+# Stop/start
+pm2 stop main-server
+pm2 start main-server
+
+# Save process list (run after any changes to pm2 processes)
+pm2 save
+```
+
+## Deployment
+
+Deploy portfolio site updates:
 
 ```bash
-# Start/Stop/Restart server
-sudo systemctl start https-server
-sudo systemctl stop https-server
-sudo systemctl restart https-server
-
-# View logs
-sudo journalctl -u https-server
+cd ~/my-website
+git pull
 ```
+
+Deploy clause analyzer updates:
+1. Build the React app locally: `npm run build` in the project folder
+2. Zip the build folder and upload to `~/` via GCP SSH console
+3. Extract: `sudo unzip -o ~/build.zip -d /var/www/leighcie.com/clauseassist`
+4. If server.js changed, upload it and run: `pm2 restart clauseassist-api`
 
 ## SSL Certificates
 
-Certificates auto-renew via crontab with automatic server restart. The renewal hook is configured in /etc/letsencrypt/renewal-hooks/deploy/restart-https-server.sh. 
+Certificates are at `/etc/letsencrypt/live/www.leighcie.com/` and auto-renew via certbot.
 
 Manual renewal if needed:
 
 ```bash
 sudo certbot renew
 ```
-To verify renewal hook setup:
-bash
 
-# Check if hook exists and is executable
-ls -l /etc/letsencrypt/renewal-hooks/deploy/
-
-# Test renewal process (dry run)
-sudo certbot renew --dry-run
-
-## Deployment
-
-Deploy updates:
+Note: after renewal, restart main-server so it picks up the new cert:
 
 ```bash
-cd /home/leighciegregg/my-website
-sudo ./deploy.sh
+pm2 restart main-server
 ```
 
 ## Common Issues
 
-1. **HTTPS not working:**
+1. **Site not loading:**
    ```bash
-   # Check server status
-   sudo systemctl status https-server
-   
-   # Verify port 443 is listening
-   sudo netstat -tlpn | grep 443
+   pm2 list                          # check both processes are online
+   sudo lsof -i :443                 # check port 443 is listening
+   pm2 logs main-server --lines 20   # check for errors
    ```
 
-2. **Website not updating:**
+2. **Clause analyzer API not working:**
    ```bash
-   # Redeploy
-   sudo ./deploy.sh
+   pm2 logs clauseassist-api --lines 20
+   cat /var/www/leighcie.com/clauseassist-api/.env   # verify API key exists
+   ```
+
+3. **Website not updating after git pull:**
+   - Hard refresh in browser: Ctrl+Shift+R
+
+4. **Server not starting after reboot:**
+   ```bash
+   pm2 resurrect    # restore saved process list
    ```
 
 ## Structure
 
 ```
-my-website/
-├── index.html          # Main portfolio page
-├── styles.css          # Styles
-├── script.js           # Interactive elements
-├── httpsserver.py      # HTTPS server
-└── deploy.sh           # Deployment script
+/home/leighciegregg/
+├── my-website/               # Portfolio site source (git repo)
+│   ├── index.html
+│   ├── case-studies.html
+│   └── ...
+├── main-server.js            # Main HTTPS server
+└── node_modules/             # Server dependencies
+
+/var/www/leighcie.com/
+├── clauseassist/             # React build (static files)
+└── clauseassist-api/         # Express API server
+    ├── server.js
+    ├── .env                  # CLAUDE_API_KEY
+    └── node_modules/
 ```
 
 ## Contact
