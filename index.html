@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leighcie Gregg | Product Manager</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>if(localStorage.getItem('theme')==='ds9'){document.documentElement.classList.add('ds9-mode');}</script>
     <style>
         * {
             margin: 0;
@@ -35,6 +37,12 @@
             border-bottom: 1px solid rgba(209, 116, 210, 0.3);
         }
 
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
         .logo {
             font-size: 14px;
             font-weight: 600;
@@ -42,6 +50,37 @@
             color: #ffffff;
             text-decoration: none;
             text-transform: uppercase;
+        }
+
+        .theme-bar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-label {
+            font-size: 10px;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .ds9-btn {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            background: #ff9c33;
+            color: #000;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            letter-spacing: 0.05em;
+            transition: background 0.2s;
+        }
+
+        .ds9-btn:hover {
+            background: #ffcc66;
         }
 
         .nav-links {
@@ -228,163 +267,290 @@
                 display: none;
             }
         }
+
+        /* DS9 theme visibility */
+        #ds9-site { display: none; }
+        html.ds9-mode #default-site { display: none; }
+        html.ds9-mode #ds9-site { display: block; }
+
+        @keyframes glowpulse { 0%,100%{opacity:.55;} 50%{opacity:1;} }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <a href="#top" class="logo">Leighcie Gregg</a>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="top" class="hero">
-        <h1 class="hero-title">hi, i'm leighcie</h1>
-        <div class="accent-line"></div>
-        
-        <div class="photo-container">
-            <img src="landz.jpg" alt="Leighcie Gregg" class="profile-photo">
-        </div>
-        
-        <p class="hero-subtitle">I'm a product manager.</p>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="section-content">
-            <h2 style="text-align: center;">About</h2>
-            <p>I discovered product management by accident when I was hired as a "research analyst" at a mortgage operations company, but spent my days helping customers with login issues and broken software. That hands-on role let me work directly with developers to fix problems, shadow audit teams to document workflows, and eventually serve as the bridge between frustrated users and technical solutions. I would lead demos, influence development priorities, and help potential customers see how our tools could transform their work—so much so that they'd go to conferences and say they couldn't do their jobs without what we built. Our sales team often said the product "sold itself." I was proud to be part of that.</p>
-            
-            <p>Over the years, I've worked across companies of different sizes and industries, but what stays consistent is my focus on deeply understanding users, translating between technical teams and business needs, building strong cross-functional relationships, and creating products that people genuinely value.</p>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="Leighcie Gregg_Product_Manager.pdf" download="Leighcie Gregg_Product_Manager.pdf" style="display: inline-block; padding: 12px 24px; background: #D174D2; color: white; text-decoration: none; border-radius: 6px; font-weight: 400; transition: background 0.3s ease;">View My Resume</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section">
-        <div class="section-content">
-            <h2 style="text-align: center;">Portfolio</h2>
-            <p style="text-align: center;">Here are some examples of work that I've done recently...</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <!-- AI Clause Analyzer Project -->
-                <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border: 1px solid rgba(209, 116, 210, 0.3);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(209, 116, 210, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.location.href='/clauseassist'">
-                    <div style="width: 80px; height: 80px; background: #D174D2; border-radius: 50%; margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: bold;">AI</div>
-                    <h3 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 400;">AI Clause Analyzer</h3>
-                    <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">Analyzes legal contract clauses using Claude AI, scoring them across five dimensions — clarity, fairness, risk allocation, flexibility, and market alignment — and suggests improved alternatives.</p>
-                    <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
-                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">React</span>
-                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Node.js</span>
-                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Claude AI</span>
-                    </div>
-                </div>
-                
-                <!-- API Spec Translator Project -->
-                <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border: 1px solid rgba(209, 116, 210, 0.3);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(209, 116, 210, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.location.href='/apispec'">
-                    <div style="width: 80px; height: 80px; background: #D174D2; border-radius: 50%; margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: bold;">API</div>
-                    <h3 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 400;">API Spec Translator</h3>
-                    <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">A browser-based tool that helps product managers translate business requirements into API documentation and OpenAPI 3.0 specs — no coding required.</p>
-                    <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
-                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">JavaScript</span>
-                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">OpenAPI</span>
-                        <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Documentation</span>
-                    </div>
+    <div id="default-site">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo-wrapper">
+                <a href="#top" class="logo">Leighcie Gregg</a>
+                <div class="theme-bar">
+                    <span class="theme-label">Themes:</span>
+                    <button class="ds9-btn" onclick="enableDS9()">DS9</button>
                 </div>
             </div>
-            
-            <!-- Case Studies Section -->
-            <div style="margin-top: 5rem;">
-                <h3 style="text-align: center; font-size: 2.5rem; font-weight: 100; margin-bottom: 3rem; color: #ffffff; letter-spacing: -0.02em;">Case Studies</h3>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
-                    <!-- Case Study 1 -->
-                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2.5rem; border-left: 4px solid #D174D2; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid rgba(209, 116, 210, 0.3); cursor: pointer;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(209, 116, 210, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.open('renewals-case-study.html', '_blank')">
-                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-                            <div style="width: 50px; height: 50px; background: #D174D2; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="top" class="hero">
+            <h1 class="hero-title">hi, i'm leighcie</h1>
+            <div class="accent-line"></div>
+
+            <div class="photo-container">
+                <img src="landz.jpg" alt="Leighcie Gregg" class="profile-photo">
+            </div>
+
+            <p class="hero-subtitle">I'm a product manager.</p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="section-content">
+                <h2 style="text-align: center;">About</h2>
+                <p>I discovered product management by accident when I was hired as a "research analyst" at a mortgage operations company, but spent my days helping customers with login issues and broken software. That hands-on role let me work directly with developers to fix problems, shadow audit teams to document workflows, and eventually serve as the bridge between frustrated users and technical solutions. I would lead demos, influence development priorities, and help potential customers see how our tools could transform their work—so much so that they'd go to conferences and say they couldn't do their jobs without what we built. Our sales team often said the product "sold itself." I was proud to be part of that.</p>
+
+                <p>Over the years, I've worked across companies of different sizes and industries, but what stays consistent is my focus on deeply understanding users, translating between technical teams and business needs, building strong cross-functional relationships, and creating products that people genuinely value.</p>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="Leighcie Gregg_Product_Manager.pdf" download="Leighcie Gregg_Product_Manager.pdf" style="display: inline-block; padding: 12px 24px; background: #D174D2; color: white; text-decoration: none; border-radius: 6px; font-weight: 400; transition: background 0.3s ease;">View My Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section">
+            <div class="section-content">
+                <h2 style="text-align: center;">Portfolio</h2>
+                <p style="text-align: center;">Here are some examples of work that I've done recently...</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <!-- AI Clause Analyzer Project -->
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border: 1px solid rgba(209, 116, 210, 0.3);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(209, 116, 210, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.location.href='/clauseassist'">
+                        <div style="width: 80px; height: 80px; background: #D174D2; border-radius: 50%; margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: bold;">AI</div>
+                        <h3 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 400;">AI Clause Analyzer</h3>
+                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">Analyzes legal contract clauses using Claude AI, scoring them across five dimensions — clarity, fairness, risk allocation, flexibility, and market alignment — and suggests improved alternatives.</p>
+                        <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">React</span>
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Node.js</span>
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Claude AI</span>
+                        </div>
+                    </div>
+
+                    <!-- API Spec Translator Project -->
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border: 1px solid rgba(209, 116, 210, 0.3);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(209, 116, 210, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.location.href='/apispec'">
+                        <div style="width: 80px; height: 80px; background: #D174D2; border-radius: 50%; margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: bold;">API</div>
+                        <h3 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 400;">API Spec Translator</h3>
+                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">A browser-based tool that helps product managers translate business requirements into API documentation and OpenAPI 3.0 specs — no coding required.</p>
+                        <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">JavaScript</span>
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">OpenAPI</span>
+                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Studies Section -->
+                <div style="margin-top: 5rem;">
+                    <h3 style="text-align: center; font-size: 2.5rem; font-weight: 100; margin-bottom: 3rem; color: #ffffff; letter-spacing: -0.02em;">Case Studies</h3>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+                        <!-- Case Study 1 -->
+                        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2.5rem; border-left: 4px solid #D174D2; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid rgba(209, 116, 210, 0.3); cursor: pointer;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(209, 116, 210, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.open('renewals-case-study.html', '_blank')">
+                            <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                                <div style="width: 50px; height: 50px; background: #D174D2; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <h4 style="color: #ffffff; font-size: 1.2rem; font-weight: 400; margin: 0; line-height: 1.4;">Turned a Year-Long Stalled Migration Into a 5-Month Win and Transformed a Critical Process</h4>
                             </div>
-                            <h4 style="color: #ffffff; font-size: 1.2rem; font-weight: 400; margin: 0; line-height: 1.4;">Turned a Year-Long Stalled Migration Into a 5-Month Win and Transformed a Critical Process</h4>
-                        </div>
-                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">Revitalized cross-team collaboration to deliver a complex microservices migration on a tight timeline, enabling an end-to-end renewals process redesign that cut processing time by 94%, eliminated downtime, and ended manual developer intervention.</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Cross-Functional Leadership</span>
-                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Technical Strategy & Execution</span>
-                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Process Innovation & Scalability</span>
-                        </div>
-                        <div style="color: #D174D2; font-size: 0.9rem; font-weight: 500;">State Insurance Marketplace</div>
-                    </div>
-                    
-                    <!-- Case Study 2 -->
-                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2.5rem; border-left: 4px solid #D174D2; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid rgba(209, 116, 210, 0.3); cursor: pointer;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(209, 116, 210, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.open('mintrak2-case-study.html', '_blank')">
-                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-                            <div style="width: 50px; height: 50px; background: #D174D2; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                                    <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.67 2 3 2.67 3 3.5v15c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5zM19 18.5H5V8h14v10.5z"/>
-                                </svg>
+                            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">Revitalized cross-team collaboration to deliver a complex microservices migration on a tight timeline, enabling an end-to-end renewals process redesign that cut processing time by 94%, eliminated downtime, and ended manual developer intervention.</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Cross-Functional Leadership</span>
+                                <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Technical Strategy & Execution</span>
+                                <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Process Innovation & Scalability</span>
                             </div>
-                            <h4 style="color: #ffffff; font-size: 1.2rem; font-weight: 400; margin: 0; line-height: 1.4;">Mintrak®2 — Rebuilt a Mission-Critical SaaS Platform in 5 Months and Turned It Into a Product Users Bragged About</h4>
+                            <div style="color: #D174D2; font-size: 0.9rem; font-weight: 500;">State Insurance Marketplace</div>
                         </div>
-                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">Redesigned core reconciliation platform for mortgage servicers, enhancing transparency, flexibility, and operational efficiency across monthly workflows.</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Product Strategy & Vision</span>
-                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Execution & Technical Delivery</span>
-                            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Business Impact & Market Growth</span>
+
+                        <!-- Case Study 2 -->
+                        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2.5rem; border-left: 4px solid #D174D2; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid rgba(209, 116, 210, 0.3); cursor: pointer;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(209, 116, 210, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'" onclick="window.open('mintrak2-case-study.html', '_blank')">
+                            <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                                <div style="width: 50px; height: 50px; background: #D174D2; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                        <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.67 2 3 2.67 3 3.5v15c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5zM19 18.5H5V8h14v10.5z"/>
+                                    </svg>
+                                </div>
+                                <h4 style="color: #ffffff; font-size: 1.2rem; font-weight: 400; margin: 0; line-height: 1.4;">Mintrak®2 — Rebuilt a Mission-Critical SaaS Platform in 5 Months and Turned It Into a Product Users Bragged About</h4>
+                            </div>
+                            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">Redesigned core reconciliation platform for mortgage servicers, enhancing transparency, flexibility, and operational efficiency across monthly workflows.</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Product Strategy & Vision</span>
+                                <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Execution & Technical Delivery</span>
+                                <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Business Impact & Market Growth</span>
+                            </div>
+                            <div style="color: #D174D2; font-size: 0.9rem; font-weight: 500;">Mortgage Industry</div>
                         </div>
-                        <div style="color: #D174D2; font-size: 0.9rem; font-weight: 500;">Mortgage Industry</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section" style="text-align: center;">
-        <div class="section-content">
-            <h2>Contact</h2>
-            <p>Questions? Comments? Coffee?</p>
-            
-            <p>I'd love to chat.</p>
-            
-            <div style="margin: 2rem 0;">
-                <a href="mailto:leighciegregg@gmail.com" style="color: #D174D2; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
-                    email
-                </a>
+        <!-- Contact Section -->
+        <section id="contact" class="section" style="text-align: center;">
+            <div class="section-content">
+                <h2>Contact</h2>
+                <p>Questions? Comments? Coffee?</p>
+
+                <p>I'd love to chat.</p>
+
+                <div style="margin: 2rem 0;">
+                    <a href="mailto:leighciegregg@gmail.com" style="color: #D174D2; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        email
+                    </a>
+                </div>
+
+                <p style="margin-bottom: 1rem;">You can also find me here:</p>
+
+                <div style="display: flex; justify-content: center; gap: 2rem; align-items: center;">
+                    <a href="https://bsky.app/profile/leighcie.com" style="color: #D174D2;" target="_blank" title="Bluesky">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4c-2-2-5-2-7 0-1 1-1 3 0 4l3 3-3 3c-1 1-1 3 0 4 2 2 5 2 7 0l0-1 0 1c2 2 5 2 7 0 1-1 1-3 0-4l-3-3 3-3c1-1 1-3 0-4-2-2-5-2-7 0z"/>
+                            <circle cx="8" cy="8" r="1"/>
+                            <circle cx="16" cy="8" r="1"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/leighcie-gregg/" style="color: #D174D2;" target="_blank" title="LinkedIn">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/leighcie" style="color: #D174D2;" target="_blank" title="GitHub">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
-            
-            <p style="margin-bottom: 1rem;">You can also find me here:</p>
-            
-            <div style="display: flex; justify-content: center; gap: 2rem; align-items: center;">
-                <a href="https://bsky.app/profile/leighcie.com" style="color: #D174D2;" target="_blank" title="Bluesky">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 4c-2-2-5-2-7 0-1 1-1 3 0 4l3 3-3 3c-1 1-1 3 0 4 2 2 5 2 7 0l0-1 0 1c2 2 5 2 7 0 1-1 1-3 0-4l-3-3 3-3c1-1 1-3 0-4-2-2-5-2-7 0z"/>
-                        <circle cx="8" cy="8" r="1"/>
-                        <circle cx="16" cy="8" r="1"/>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/leighcie-gregg/" style="color: #D174D2;" target="_blank" title="LinkedIn">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/leighcie" style="color: #D174D2;" target="_blank" title="GitHub">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
+        </section>
+    </div><!-- end #default-site -->
+
+    <!-- DS9 Theme -->
+    <div id="ds9-site">
+        <button onclick="disableDS9()" style="position:fixed;top:12px;right:12px;z-index:9999;font-family:'JetBrains Mono',monospace;font-size:11px;padding:6px 14px;background:#3a3a66;color:#9c9cff;border:1px solid #9c9cff;cursor:pointer;letter-spacing:.06em;border-radius:3px;">&#9664; STANDARD OPS</button>
+        <div style="background:#000;min-height:100vh;padding:14px;font-family:'Antonio',sans-serif;display:flex;gap:10px;max-width:1180px;margin:0 auto;">
+
+          <!-- LEFT RAIL -->
+          <div style="width:210px;display:flex;flex-direction:column;gap:8px;flex-shrink:0;">
+            <div style="height:120px;background:#ff9c33;border-top-left-radius:90px;"></div>
+            <div style="height:50px;background:#cc99cc;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 16px 8px;color:#000;font-size:18px;font-weight:600;letter-spacing:.04em;">PROFILE·01</div>
+            <div style="height:50px;background:#66cc99;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 16px 8px;color:#000;font-size:18px;font-weight:600;letter-spacing:.04em;">RECORD·02</div>
+            <div style="height:50px;background:#ffcc66;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 16px 8px;color:#000;font-size:18px;font-weight:600;letter-spacing:.04em;">COMMS·03</div>
+            <a href="Leighcie Gregg_Product_Manager.pdf" download="Leighcie Gregg_Product_Manager.pdf" style="height:70px;background:#ff7755;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;padding:0 16px 10px;color:#000;font-size:18px;font-weight:600;letter-spacing:.04em;line-height:1;text-decoration:none;">R&#201;SUM&#201;<span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;margin-top:3px;">&#8595; .PDF</span></a>
+            <div style="flex:1;min-height:80px;background:#3a3a66;"></div>
+            <div style="height:34px;background:#9c9cff;border-bottom-left-radius:46px;"></div>
+          </div>
+
+          <!-- RIGHT -->
+          <div style="flex:1;display:flex;flex-direction:column;gap:8px;min-width:0;">
+
+            <!-- top bar -->
+            <div style="display:flex;gap:8px;height:56px;">
+              <div style="flex:1;background:#ff9c33;border-top-right-radius:28px;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 24px 9px;color:#000;font-size:21px;font-weight:600;letter-spacing:.06em;">PERSONNEL FILE · STATION OPS</div>
+              <div style="width:180px;background:#cc99cc;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 16px 9px;color:#000;font-family:'JetBrains Mono',monospace;font-size:13px;">&#9733; 54021.7</div>
             </div>
+
+            <!-- hero -->
+            <div style="background:#000;display:grid;grid-template-columns:1fr 230px;gap:24px;padding:22px 6px 10px;align-items:start;">
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#ffcc66;letter-spacing:.08em;display:flex;align-items:center;gap:9px;margin-bottom:10px;"><span style="width:10px;height:10px;border-radius:50%;background:#66cc99;display:inline-block;animation:glowpulse 1.4s infinite;"></span>ACCESS: GRANTED · CLEARANCE LV 9</div>
+                <h1 style="margin:0;font-family:'Antonio',sans-serif;font-weight:700;font-size:clamp(58px,9vw,120px);line-height:.86;letter-spacing:.005em;text-transform:uppercase;color:#ff9c33;">Leighcie<br>Gregg</h1>
+                <div style="font-family:'Antonio',sans-serif;font-size:clamp(22px,2.6vw,34px);letter-spacing:.1em;text-transform:uppercase;color:#cc99cc;margin-top:12px;">Senior Product Manager</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8a8a9a;margin-top:16px;line-height:1.7;">ASSIGNMENT: Station Operations<br>SPECIALTY: Migrations · Platforms · AI systems<br>STATUS: <span style="color:#66cc99;">Available for new posting</span></div>
+              </div>
+              <div>
+                <div style="background:#ffcc66;padding:7px 7px 0;border-top-left-radius:20px;border-top-right-radius:20px;">
+                  <img src="landz.jpg" alt="Leighcie Gregg" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;display:block;border-top-left-radius:13px;border-top-right-radius:13px;">
+                  <div style="text-align:right;color:#000;font-size:16px;font-weight:600;letter-spacing:.06em;padding:6px 8px 8px;">VISUAL ID</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- personnel summary -->
+            <div style="display:flex;gap:8px;align-items:stretch;">
+              <div style="width:130px;background:#9c9cff;border-bottom-left-radius:32px;display:flex;align-items:flex-start;justify-content:flex-end;padding:11px 13px;color:#000;font-size:16px;font-weight:600;letter-spacing:.04em;text-align:right;line-height:1.05;">PERSONNEL SUMMARY</div>
+              <div style="flex:1;background:#0c0c0c;border:1px solid #222;padding:20px 22px;font-family:'Space Grotesk',sans-serif;font-size:16.5px;line-height:1.6;color:#d4d4dc;">A decade of recovering stalled, mission-critical systems and turning them into products the crew is proud to run. Calm under pressure, fluent with engineering, and known for shipping the refit ahead of schedule.</div>
+            </div>
+
+            <!-- service record header -->
+            <div style="height:44px;background:#66cc99;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 20px 7px;color:#000;font-size:20px;font-weight:600;letter-spacing:.06em;border-top-right-radius:24px;margin-top:2px;">SERVICE RECORD · 04 ENTRIES</div>
+
+            <!-- service record entries -->
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:grid;grid-template-columns:80px 1fr 160px;gap:12px;align-items:center;background:#0c0c0c;border:1px solid #222;padding:16px 18px;cursor:pointer;" onmouseover="this.style.borderColor='#66cc99'" onmouseout="this.style.borderColor='#222'" onclick="window.open('renewals-case-study.html','_blank')">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#ff9c33;">LOG 01</div>
+                <div>
+                  <div style="font-family:'Antonio',sans-serif;font-size:25px;line-height:1.04;letter-spacing:.02em;color:#fff;text-transform:uppercase;">Stalled migration &#8594; 5-month win</div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a8a9a;margin-top:4px;">Recovered a year-long stalled migration; full deployment in five months.</div>
+                </div>
+                <div style="text-align:right;font-family:'JetBrains Mono',monospace;font-size:13px;color:#66cc99;">&#9679; COMPLETE</div>
+              </div>
+              <div style="display:grid;grid-template-columns:80px 1fr 160px;gap:12px;align-items:center;background:#0c0c0c;border:1px solid #222;padding:16px 18px;cursor:pointer;" onmouseover="this.style.borderColor='#66cc99'" onmouseout="this.style.borderColor='#222'" onclick="window.open('mintrak2-case-study.html','_blank')">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#ff9c33;">LOG 02</div>
+                <div>
+                  <div style="font-family:'Antonio',sans-serif;font-size:25px;line-height:1.04;letter-spacing:.02em;color:#fff;text-transform:uppercase;">Mintrak&#174;2 &#8212; SaaS platform rebuild</div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a8a9a;margin-top:4px;">Rebuilt a mission-critical platform; crew morale at all-time high.</div>
+                </div>
+                <div style="text-align:right;font-family:'JetBrains Mono',monospace;font-size:13px;color:#66cc99;">&#9679; COMPLETE</div>
+              </div>
+              <div style="display:grid;grid-template-columns:80px 1fr 160px;gap:12px;align-items:center;background:#0c0c0c;border:1px solid #222;padding:16px 18px;cursor:pointer;" onmouseover="this.style.borderColor='#cc99cc'" onmouseout="this.style.borderColor='#222'" onclick="window.location.href='/clauseassist'">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#cc99cc;">APP 03</div>
+                <div>
+                  <div style="font-family:'Antonio',sans-serif;font-size:25px;line-height:1.04;letter-spacing:.02em;color:#fff;text-transform:uppercase;">AI Legal Clause Analyzer</div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a8a9a;margin-top:4px;">Autonomous contract-review subroutine. LLM-powered.</div>
+                </div>
+                <div style="text-align:right;font-family:'JetBrains Mono',monospace;font-size:13px;color:#ffcc66;">&#9650; ONLINE</div>
+              </div>
+              <div style="display:grid;grid-template-columns:80px 1fr 160px;gap:12px;align-items:center;background:#0c0c0c;border:1px solid #222;padding:16px 18px;cursor:pointer;" onmouseover="this.style.borderColor='#cc99cc'" onmouseout="this.style.borderColor='#222'" onclick="window.location.href='/apispec'">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#cc99cc;">APP 04</div>
+                <div>
+                  <div style="font-family:'Antonio',sans-serif;font-size:25px;line-height:1.04;letter-spacing:.02em;color:#fff;text-transform:uppercase;">API Spec Translator</div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a8a9a;margin-top:4px;">Universal translator for machine interfaces. Spec &#8594; spec.</div>
+                </div>
+                <div style="text-align:right;font-family:'JetBrains Mono',monospace;font-size:13px;color:#ffcc66;">&#9650; ONLINE</div>
+              </div>
+            </div>
+
+            <!-- comms footer -->
+            <div style="display:flex;gap:8px;margin-top:2px;align-items:stretch;">
+              <div style="width:160px;background:#ff7755;border-bottom-left-radius:32px;border-bottom-right-radius:6px;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 15px 10px;color:#000;font-size:17px;font-weight:600;letter-spacing:.04em;">SUBSPACE COMMS</div>
+              <div style="flex:1;display:flex;gap:6px;">
+                <a href="mailto:leighciegregg@gmail.com" style="flex:1;background:#cc99cc;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 15px 8px;color:#000;font-size:17px;font-weight:600;letter-spacing:.04em;text-decoration:none;">EMAIL</a>
+                <a href="https://github.com/leighcie" target="_blank" style="flex:1;background:#9c9cff;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 15px 8px;color:#000;font-size:17px;font-weight:600;letter-spacing:.04em;text-decoration:none;">GITHUB</a>
+                <a href="https://www.linkedin.com/in/leighcie-gregg/" target="_blank" style="flex:1;background:#66cc99;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 15px 8px;color:#000;font-size:17px;font-weight:600;letter-spacing:.04em;text-decoration:none;">LINKEDIN</a>
+              </div>
+              <div style="width:160px;background:#ffcc66;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 15px 8px;color:#000;font-family:'JetBrains Mono',monospace;font-size:12px;">RAKTAJINO: HOT</div>
+            </div>
+
+          </div>
         </div>
-    </section>
+    </div><!-- end #ds9-site -->
+
+    <script>
+        function enableDS9() {
+            document.documentElement.classList.add('ds9-mode');
+            localStorage.setItem('theme', 'ds9');
+        }
+        function disableDS9() {
+            document.documentElement.classList.remove('ds9-mode');
+            localStorage.removeItem('theme');
+        }
+    </script>
 </body>
 </html>
